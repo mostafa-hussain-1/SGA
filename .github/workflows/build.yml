@@ -4,18 +4,19 @@ on:
   push:
     branches: [ "main", "master" ]
   workflow_dispatch:
+
 jobs:
   build:
     runs-on: windows-latest
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Setup Qt
       uses: jurplel/install-qt-action@v3
       with:
-        version: '6.5.0' # لو شغال بإصدار تاني أحدث أو أقدم اكتبه هنا
+        version: '6.5.0'
         host: 'windows'
         target: 'desktop'
         arch: 'win64_mingw'
@@ -33,7 +34,7 @@ jobs:
         windeployqt SGA_Qt.exe
 
     - name: Upload Application
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: SGA_App_Windows
         path: build/
