@@ -23,18 +23,18 @@ jobs:
 
     - name: Build with CMake
       run: |
-        mkdir build
-        cd build
+        mkdir build_ci
+        cd build_ci
         cmake -DCMAKE_BUILD_TYPE=Release ..
         cmake --build . --config Release
 
     - name: Run windeployqt
       run: |
-        cd build
+        cd build_ci
         windeployqt SGA_Qt.exe
 
     - name: Upload Application
       uses: actions/upload-artifact@v4
       with:
         name: SGA_App_Windows
-        path: build/
+        path: build_ci/
