@@ -1,0 +1,28 @@
+{
+	"BUILD_DIR" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen",
+	"CMAKE_BINARY_DIR" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt",
+	"CMAKE_SOURCE_DIR" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt",
+	"CROSS_CONFIG" : false,
+	"GENERATOR" : "Ninja",
+	"INCLUDE_DIR" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include",
+	"INPUTS" : 
+	[
+		"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/2459101-426374013.jpg",
+		"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/Screenshot_20260620_153737.png",
+		"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/Screenshot_20260620_195159.png",
+		"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/Screenshot_20260619_132542.png"
+	],
+	"LOCK_FILE" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/SGA_Qt_autogen.dir/AutoRcc_res_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "res" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_res.cpp",
+	"RCC_EXECUTABLE" : "/usr/lib64/qt6/libexec/rcc",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/SGA_Qt_autogen.dir/AutoRcc_res_EWIEGA46WW_Used.txt",
+	"SOURCE" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/res.qrc",
+	"USE_BETTER_GRAPH" : true,
+	"VERBOSITY" : 0
+}

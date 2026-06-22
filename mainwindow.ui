@@ -1,0 +1,2044 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1289</width>
+    <height>817</height>
+   </rect>
+  </property>
+  <property name="acceptDrops">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>SGA</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 1. القاعدة العامة (الخلفية والأساسيات) */
+QMainWindow {
+    background-color: #121212;
+}
+
+/* ستايل الـ Frames الهادي (اللي مخدتش كلاس نيون) */
+QFrame {
+    background-color: #1E1E1E;
+    border: 1px solid #2D2D2D;
+    border-radius: 10px;
+}
+
+/* 2. ستايل النيون المخصص (استخدمه لأي Frame عايز تظهره، حط في الـ StyleSheet بتاعه: .neon_frame) */
+QFrame[style_type=&quot;neon&quot;] {
+    background-color: #252525;
+    border: 2px solid #00FF66;
+    border-radius: 10px;
+}
+
+
+/* 3. النصوص */
+QLabel {
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+QLabel[label_case=&quot;title&quot;]{
+    color: #00FF66; /* أخضر نيون */
+    font-size: 20px; /* خط كبير */
+    font-weight: bold;
+}
+
+QLabel[label_case = &quot;head&quot;]{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+QLabel[label_case = &quot;icon&quot;]{
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+QLabel[style_type = &quot;about&quot;] {
+    color: #FFFFFF;
+    font-size: 17px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+}
+
+/* 4. الزراير */
+QPushButton {
+    background-color: #05C46B;
+    color: #121212;
+    border-radius: 12px;
+    padding: 8px 16px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+QPushButton:hover {
+    background-color: #33FF88;
+}
+
+QPushButton[style_type=&quot;delete&quot;]{
+    background-color: #FF4757;
+    color: white;
+}
+
+QPushButton[style_type=&quot;delete&quot;]:hover {
+    background-color: #FF5555;
+}
+
+/* الحالة الافتراضية للزرار */
+QPushButton#updateBtn {
+    /* تدرج لوني من البرتقالي الغامق للبرتقالي الفاتح/الذهبي */
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, 
+                                stop: 0 #FF7A00, stop: 1 #FF9D00);
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 8px; /* حواف ناعمة */
+    border: 1px solid #FF9D00;
+    padding: 6px 15px;
+}
+
+/* لما الماوس يروح عليه (إحساس الوهج أو الـ Glow) */
+QPushButton#updateBtn:hover {
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: 0, 
+                                stop: 0 #FF9D00, stop: 1 #FFB732);
+    border: 1px solid #FFE066; /* تحديد أفتح عشان ينور */
+}
+
+/* لما اليوزر يدوس عليه */
+QPushButton#updateBtn:pressed {
+    background: #E66A00; /* لون برتقالي مطفي شوية يدي إحساس الضغطة */
+    border: 1px solid #E66A00;
+    padding-top: 8px; /* تريكة صايعة بتخلي النص ينزل ملي لتحت كأنه زرار حقيقي */
+    padding-bottom: 4px;
+}
+
+QPushButton[style_type=&quot;emoji_btn&quot;] {
+    background-color: transparent; /* شفاف تماماً عشان ياخد لون الفريم اللي تحته */
+    border: none;                  /* مش عايزين إطار مضايق العين */
+    font-size: 40px;               /* كبر حجم الإيموجي عشان يبقى واضح */
+    border-radius: 8px;            /* تنعيم الحواف للحالة بتاعة الـ Hover */
+    padding: 5px;
+}
+
+/* لما الماوس يروح على الزرار (Hover) */
+QPushButton[style_type=&quot;emoji_btn&quot;]:hover {
+    background-color: #252525;     /* إضاءة خفيفة جداً رمادي غامق خلف الإيموجي */
+    border: 1px solid #00FF66;     /* خط نيون أخضر رفيع يحدد الزرار */
+}
+
+/* لما يدوس على الزرار (Pressed) */
+QPushButton[style_type=&quot;emoji_btn&quot;]:pressed {
+    background-color: #1A1A1A;     /* يغمق سيكة عشان يحس بالدوسة */
+}
+
+
+/* 5. خانات الإدخال */
+QLineEdit {
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+    border: 1px solid #444444;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+QLineEdit:focus {
+    border: 1px solid #00FF66;
+}
+
+/* 6. الجدول (QTableWidget) */
+QTableWidget {
+    background-color: #1E1E1E; /* لون الخلفية الغامق بتاع الشاشة */
+    alternate-background-color: #2A2A2A; /* لون الجراف اللي هيكسر الغمقان */
+    color: #FFFFFF;
+    gridline-color: #444444; /* خطوط الجدول */
+    border: none;
+}
+
+/* لو عايز تلون الهيدر (العناوين اللي فوق) بنفس اللون عشان تقفل الشياكة */
+QHeaderView::section {
+    background-color: #2A2A2A; 
+    color: #00FF66;
+    border: 1px solid #444444;
+    padding: 4px;
+}
+QTableWidget::item {
+    border-bottom: 1px solid #2D2D2D;
+    padding: 6px;
+}
+
+QTableWidget::item:selected {
+    background-color: #00FF66;
+    color: #121212;
+}
+
+QStackedWidget {
+    background-color: rgba(30, 30, 30, 180); 
+    border: 1px solid rgba(255, 255, 255, 40);
+    border-radius: 15px;
+}
+
+QProgressBar {
+    background-color: transparent;
+    border: 1px solid #2D2D2D; /* إطار خفيف عشان يحدد مسار الشريط */
+    border-radius: 5px;
+    text-align: center; /* بيسنتر النسبة في النص */
+	font-size: 30px;
+    color: #FFFFFF;/* لون النسبة */
+    font-weight: bold;
+}
+QProgressBar::chunk {
+    background-color: #05C46B; /* لون الشريط الأخضر */
+    border-radius: 5px;
+}
+
+/* 2. حالة الخطر (أقل من 60) */
+QProgressBar[progress_state=&quot;bad&quot;]::chunk { background-color: #FF4757; }
+QProgressBar[progress_state=&quot;bad&quot;] { color: #FFFFFF; }
+
+/* 3. حالة المتوسط (من 60 لـ 85) */
+QProgressBar[progress_state=&quot;mid&quot;]::chunk { background-color: #FFA502; }
+QProgressBar[progress_state=&quot;mid&quot;] { color: #FFFFFF; }
+
+/* 4. حالة الامتياز (فوق 85) */
+QProgressBar[progress_state=&quot;good&quot;]::chunk { background-color: #00FF66; }
+QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QFrame" name="frame">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>388</width>
+      <height>114</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>388</width>
+      <height>114</height>
+     </size>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <widget class="QLabel" name="head_lbl">
+     <property name="geometry">
+      <rect>
+       <x>18</x>
+       <y>4</y>
+       <width>360</width>
+       <height>43</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Smart GPA Assistant  🎓</string>
+     </property>
+     <property name="label_case" stdset="0">
+      <string>head</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="dashboard">
+     <property name="geometry">
+      <rect>
+       <x>22</x>
+       <y>45</y>
+       <width>60</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Dashboard</string>
+     </property>
+     <property name="text">
+      <string>🏠</string>
+     </property>
+     <property name="style_type" stdset="0">
+      <string>emoji_btn</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="about">
+     <property name="geometry">
+      <rect>
+       <x>293</x>
+       <y>45</y>
+       <width>65</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>about</string>
+     </property>
+     <property name="text">
+      <string>👨‍💻</string>
+     </property>
+     <property name="style_type" stdset="0">
+      <string>emoji_btn</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="current_semester">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>45</y>
+       <width>64</width>
+       <height>56</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>Current Semester</string>
+     </property>
+     <property name="text">
+      <string>🎯</string>
+     </property>
+     <property name="style_type" stdset="0">
+      <string>emoji_btn</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_1">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>898</x>
+      <y>12</y>
+      <width>211</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.neon_frame {}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <property name="style_type" stdset="0">
+     <string>neon</string>
+    </property>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>56</x>
+       <y>21</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Academic Alert</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="academic_alert">
+     <property name="geometry">
+      <rect>
+       <x>17</x>
+       <y>69</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Academic Alert</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_9">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>7</y>
+       <width>37</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🚨</string>
+     </property>
+     <property name="label_case" stdset="0">
+      <string>icon</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1118</x>
+      <y>12</y>
+      <width>165</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.neon_frame {}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <property name="style_type" stdset="0">
+     <string>neon</string>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>52</x>
+       <y>21</y>
+       <width>51</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CGPA</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_11">
+     <property name="geometry">
+      <rect>
+       <x>16</x>
+       <y>16</y>
+       <width>28</width>
+       <height>29</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="res.qrc">:/new/prefix1/calculator-8-64.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="cgpa">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>69</y>
+       <width>61</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>CGPA</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_3">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>678</x>
+      <y>12</y>
+      <width>211</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.neon_frame {}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <property name="style_type" stdset="0">
+     <string>neon</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>149</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Achieved Hours</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="academic_level">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>81</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Academic Level</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="achieved_hours">
+     <property name="geometry">
+      <rect>
+       <x>14</x>
+       <y>54</y>
+       <width>141</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Achieved Hours</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_7">
+     <property name="geometry">
+      <rect>
+       <x>8</x>
+       <y>6</y>
+       <width>37</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🕒</string>
+     </property>
+     <property name="label_case" stdset="0">
+      <string>icon</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="frame_4">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>12</y>
+      <width>239</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">.neon_frame {}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Raised</enum>
+    </property>
+    <property name="style_type" stdset="0">
+     <string>neon</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>21</y>
+       <width>171</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Registeration Limit</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="regist_limit">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>69</y>
+       <width>171</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Registeration Limit</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_8">
+     <property name="geometry">
+      <rect>
+       <x>9</x>
+       <y>7</y>
+       <width>37</width>
+       <height>45</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>🔓</string>
+     </property>
+     <property name="label_case" stdset="0">
+      <string>icon</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="glassContainer">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>1273</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>7</x>
+        <y>45</y>
+        <width>380</width>
+        <height>586</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLabel" name="title_lbl">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>31</y>
+         <width>177</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Add / Edit Course</string>
+       </property>
+       <property name="label_case" stdset="0">
+        <string>title</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>24</x>
+         <y>104</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Course Code</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>24</x>
+         <y>320</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Semester</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>24</x>
+         <y>398</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Grade </string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>24</x>
+         <y>242</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Credit Hours</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>24</x>
+         <y>172</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Course Name</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="add_button">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>520</y>
+         <width>280</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save Course</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="count_in_gpa">
+       <property name="geometry">
+        <rect>
+         <x>24</x>
+         <y>460</y>
+         <width>163</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Counts in GPA</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="code">
+       <property name="geometry">
+        <rect>
+         <x>159</x>
+         <y>102</y>
+         <width>207</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="semester">
+       <property name="geometry">
+        <rect>
+         <x>159</x>
+         <y>318</y>
+         <width>207</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="hours">
+       <property name="geometry">
+        <rect>
+         <x>159</x>
+         <y>240</y>
+         <width>207</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="name">
+       <property name="geometry">
+        <rect>
+         <x>159</x>
+         <y>170</y>
+         <width>207</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="grade">
+       <property name="geometry">
+        <rect>
+         <x>158</x>
+         <y>390</y>
+         <width>207</width>
+         <height>33</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="style_type" stdset="0">
+        <string>combo</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>392</x>
+        <y>46</y>
+        <width>869</width>
+        <height>289</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QTableWidget" name="tableWidget">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>50</y>
+         <width>858</width>
+         <height>227</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>Code</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Credit Hours</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Grade</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Semester</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Status</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="delete_btn">
+       <property name="geometry">
+        <rect>
+         <x>704</x>
+         <y>9</y>
+         <width>160</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="text">
+        <string>Delete Course</string>
+       </property>
+       <property name="style_type" stdset="0">
+        <string>delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="edit_course">
+       <property name="geometry">
+        <rect>
+         <x>550</x>
+         <y>9</y>
+         <width>149</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Edit Course</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_5">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>17</y>
+         <width>178</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Completed Courses</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QChartView" name="chartWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>392</x>
+        <y>339</y>
+        <width>869</width>
+        <height>293</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="messageLabel">
+      <property name="geometry">
+       <rect>
+        <x>402</x>
+        <y>11</y>
+        <width>861</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="updateBtn">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>64</x>
+        <y>4</y>
+        <width>254</width>
+        <height>35</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Update Now ! </string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>9</y>
+        <width>379</width>
+        <height>623</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLabel" name="title_lbl_2">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>30</y>
+         <width>177</width>
+         <height>26</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Register Course</string>
+       </property>
+       <property name="label_case" stdset="0">
+        <string>title</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_18">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>94</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Course Code</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_19">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>421</y>
+         <width>52</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Quiz</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_20">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>290</y>
+         <width>143</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Targeted Grade </string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_21">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>222</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Credit Hours</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_22">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>160</y>
+         <width>124</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Course Name</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="add_button_2">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>560</y>
+         <width>280</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save Course</string>
+       </property>
+      </widget>
+      <widget class="QCheckBox" name="has_practical">
+       <property name="geometry">
+        <rect>
+         <x>15</x>
+         <y>350</y>
+         <width>300</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>14</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Course has a practical exam?</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="code_2">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>92</y>
+         <width>207</width>
+         <height>30</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="quiz">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>419</y>
+         <width>80</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="hours_2">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>220</y>
+         <width>207</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="name_2">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>158</y>
+         <width>207</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="grade_2">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>282</y>
+         <width>207</width>
+         <height>33</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="style_type" stdset="0">
+        <string>combo</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="practical_label">
+       <property name="geometry">
+        <rect>
+         <x>200</x>
+         <y>489</y>
+         <width>83</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Practical</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="practical_line">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>483</y>
+         <width>80</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_24">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>489</y>
+         <width>115</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Year Work</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="year_work">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>483</y>
+         <width>80</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_25">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>421</y>
+         <width>92</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Mid Term</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="mid_term">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>419</y>
+         <width>80</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>396</x>
+        <y>195</y>
+        <width>868</width>
+        <height>332</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QTableWidget" name="registered_courses">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>50</y>
+         <width>858</width>
+         <height>268</height>
+        </rect>
+       </property>
+       <column>
+        <property name="text">
+         <string>Code</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Credit Hours</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Target Grade</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Needed in Final</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Mid Term</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Quiz</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Year Work</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Practical</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QPushButton" name="delete_btn_2">
+       <property name="geometry">
+        <rect>
+         <x>694</x>
+         <y>9</y>
+         <width>160</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Delete Course</string>
+       </property>
+       <property name="style_type" stdset="0">
+        <string>delete</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="edit_course_2">
+       <property name="geometry">
+        <rect>
+         <x>530</x>
+         <y>9</y>
+         <width>149</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Edit Course</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_6">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>17</y>
+         <width>178</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Registed Courses</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="submit">
+       <property name="geometry">
+        <rect>
+         <x>308</x>
+         <y>9</y>
+         <width>211</width>
+         <height>35</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Submit Final Grades</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_9">
+      <property name="geometry">
+       <rect>
+        <x>396</x>
+        <y>10</y>
+        <width>868</width>
+        <height>48</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QLabel" name="regist_limit_2">
+       <property name="geometry">
+        <rect>
+         <x>18</x>
+         <y>13</y>
+         <width>125</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Target CGPA :</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="target_textBox">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>10</y>
+         <width>93</width>
+         <height>29</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+      </widget>
+      <widget class="QLabel" name="regist_limit_3">
+       <property name="geometry">
+        <rect>
+         <x>600</x>
+         <y>13</y>
+         <width>112</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Plan's GPA :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="regist_limit_4">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>13</y>
+         <width>135</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Target SGPA :</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="target_sgpa">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>13</y>
+         <width>107</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="planned_gpa">
+       <property name="geometry">
+        <rect>
+         <x>720</x>
+         <y>13</y>
+         <width>108</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_10">
+      <property name="geometry">
+       <rect>
+        <x>396</x>
+        <y>533</y>
+        <width>868</width>
+        <height>98</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Shadow::Raised</enum>
+      </property>
+      <widget class="QProgressBar" name="progressBar">
+       <property name="geometry">
+        <rect>
+         <x>6</x>
+         <y>35</y>
+         <width>855</width>
+         <height>55</height>
+        </rect>
+       </property>
+       <property name="value">
+        <number>24</number>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>16</x>
+         <y>7</y>
+         <width>178</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="text">
+        <string>Semester Progress</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="plan_statue">
+      <property name="geometry">
+       <rect>
+        <x>396</x>
+        <y>109</y>
+        <width>868</width>
+        <height>77</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::RightToLeft</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>775</x>
+        <y>72</y>
+        <width>109</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Plan Status</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QPushButton" name="complaints">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>359</y>
+        <width>245</width>
+        <height>219</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>في مشكلة هنا يا باشا ولا ايه</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/new/prefix1/Screenshot_20260619_132542.png</normaloff>:/new/prefix1/Screenshot_20260619_132542.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>250</width>
+        <height>250</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="linkedin">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>359</y>
+        <width>245</width>
+        <height>220</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>وش ذا الشرس</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/new/prefix1/2459101-426374013.jpg</normaloff>:/new/prefix1/2459101-426374013.jpg</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>245</width>
+        <height>280</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_23">
+      <property name="geometry">
+       <rect>
+        <x>598</x>
+        <y>590</y>
+        <width>69</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>GitHub</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_26">
+      <property name="geometry">
+       <rect>
+        <x>885</x>
+        <y>590</y>
+        <width>216</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Complaints &amp; Feedback</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_27">
+      <property name="geometry">
+       <rect>
+        <x>228</x>
+        <y>590</y>
+        <width>89</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>LinkedIn</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="about_message">
+      <property name="geometry">
+       <rect>
+        <x>-30</x>
+        <y>6</y>
+        <width>1279</width>
+        <height>335</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>&lt;div dir=&quot;rtl&quot; align=&quot;right&quot; style=&quot;line-height: 1.5; padding-left: 10px;&quot;&gt;
+.     SGA مش مجرد ابلكيشن بيحسبلك الـ GPA بتاعك. ده شريك رحلتك في الكلية، من اول الخطة اللي بتحطها في بداية الترم لحد ما تاخد على وشك في الميدتيرم وتخش &lt;br&gt;
+.    في مرحلة &quot;هنعوض في الفاينال&quot;. وعشان كده هو معمول عشانك مخصوص وماشي على لايحة الكلية بالمللي، وسط زحمة الكلية، والتاسكات،والبروجيكتات اللي بتسحلنا &lt;br&gt;
+.    الواحد بيبقى محتاج حاجه تلمله الليلة وتعرفه هو واقف فين بالظبط فالأبلكيشن ده معمول عشان يجيبلك الخلاصة؛ يتابع معاك التارجت بتاعك أول بأول، يفوقك لو محتاج &lt;br&gt;
+   تشد حيلك شوية، ويطمنك إنك على ماشي صح من غير ورقة وقلم ولا وجع دماغ. الرحلة طويلة ومحتاجة نفس، سيب حسبة الدرجات والأرقام علينا، وركز انت في طريقك.&lt;br&gt;
+   واوعى تنسى ان الـ &lt;span dir=&quot;ltr&quot;&gt;A+&lt;/span&gt; مبتعملش رجالة .. الرجالة هي اللي بتعمل الـ &lt;span dir=&quot;ltr&quot;&gt;A+&lt;/span&gt;
+&lt;/div&gt;</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::TextFormat::AutoText</enum>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+      </property>
+      <property name="style_type" stdset="0">
+       <string>about</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="github">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>359</y>
+        <width>245</width>
+        <height>220</height>
+       </rect>
+      </property>
+      <property name="toolTip">
+       <string>شكلي يشرف والنبي؟</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="res.qrc">
+        <normaloff>:/new/prefix1/Screenshot_20260620_153737.png</normaloff>:/new/prefix1/Screenshot_20260620_153737.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>245</width>
+        <height>280</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1289</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QWidget</extends>
+   <header>qchartview.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <tabstops>
+  <tabstop>code_2</tabstop>
+  <tabstop>name_2</tabstop>
+  <tabstop>hours_2</tabstop>
+  <tabstop>grade_2</tabstop>
+  <tabstop>has_practical</tabstop>
+  <tabstop>mid_term</tabstop>
+  <tabstop>quiz</tabstop>
+  <tabstop>year_work</tabstop>
+  <tabstop>practical_line</tabstop>
+  <tabstop>add_button_2</tabstop>
+  <tabstop>about</tabstop>
+  <tabstop>current_semester</tabstop>
+  <tabstop>tableWidget</tabstop>
+  <tabstop>updateBtn</tabstop>
+  <tabstop>dashboard</tabstop>
+  <tabstop>grade</tabstop>
+  <tabstop>code</tabstop>
+  <tabstop>add_button</tabstop>
+  <tabstop>hours</tabstop>
+  <tabstop>name</tabstop>
+  <tabstop>semester</tabstop>
+  <tabstop>delete_btn</tabstop>
+  <tabstop>edit_course</tabstop>
+  <tabstop>count_in_gpa</tabstop>
+  <tabstop>registered_courses</tabstop>
+  <tabstop>delete_btn_2</tabstop>
+  <tabstop>edit_course_2</tabstop>
+  <tabstop>submit</tabstop>
+  <tabstop>target_textBox</tabstop>
+  <tabstop>complaints</tabstop>
+  <tabstop>linkedin</tabstop>
+  <tabstop>github</tabstop>
+ </tabstops>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>10</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>10</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>false</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>false</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
