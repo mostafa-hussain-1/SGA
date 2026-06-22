@@ -1,0 +1,39 @@
+name: Windows Build
+
+on:
+  push:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Setup Qt
+      uses: jurplel/install-qt-action@v3
+      with:
+        version: '6.5.0' # لو شغال بإصدار تاني أحدث أو أقدم اكتبه هنا
+        host: 'windows'
+        target: 'desktop'
+        arch: 'win64_mingw'
+
+    - name: Build with CMake
+      run: |
+        mkdir build
+        cd build
+        cmake -DCMAKE_BUILD_TYPE=Release ..
+        cmake --build . --config Release
+
+    - name: Run windeployqt
+      run: |
+        cd build
+        windeployqt SGA_Qt.exe
+
+    - name: Upload Application
+      uses: actions/upload-artifact@v3
+      with:
+        name: SGA_App_Windows
+        path: build/
