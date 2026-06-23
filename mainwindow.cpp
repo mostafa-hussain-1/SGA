@@ -88,6 +88,10 @@ void MainWindow::on_updateBtn_clicked()
 // dash board functions
 
 void MainWindow::fixed_properties(){
+
+    this->setFixedSize(1289, 817);
+
+
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui->tableWidget->setColumnWidth(0, 150);
@@ -105,12 +109,12 @@ void MainWindow::fixed_properties(){
     ui->semester->setValidator(new QIntValidator(1, 20, this));
 
     ui->hours_2->setValidator(new QIntValidator(1, 1, this));
-    ui->practical_line->setValidator(new QIntValidator(0, 50, this));
-    ui->quiz->setValidator(new QIntValidator(0, 50, this));
-    ui->mid_term->setValidator(new QIntValidator(0, 50, this));
-    ui->year_work->setValidator(new QIntValidator(0, 50, this));
+    ui->practical_line->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+    ui->quiz->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+    ui->mid_term->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+    ui->year_work->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
 
-    ui->target_textBox->setValidator(new QDoubleValidator(0.0, 4.0, 2, this));
+    ui->target_textBox->setValidator(new QDoubleValidator(0.00, 4.00, 3, this));
 
     ui->glassContainer->setCurrentIndex(0);
 
@@ -129,7 +133,7 @@ void MainWindow::fixed_properties(){
     ui->updateBtn->hide();
     ui->messageLabel->hide();
 
-
+    ui->has_practical->setChecked(false);
     ui->practical_label->hide();
     ui->practical_line->hide();
 
@@ -138,7 +142,7 @@ void MainWindow::fixed_properties(){
     ui->progressBar->setTextVisible(true);
 
 
-    if (ui->target_textBox->text().isEmpty()) {
+    if (target_cgpa == 0) {
         ui->plan_statue->setText("دخل التارجت بتاعك الأول عشان نبدأ نحسب الخطة 🎯");
     }
 
@@ -446,9 +450,6 @@ void MainWindow::update_semester_progress(){
     double target_CGPA = ui->target_textBox->text().toDouble();
     int current_hours = ui->achieved_hours->text().toInt();
 
-    double required_grade = calculate_target(current_CGPA, current_hours, semester_credits, target_CGPA);
-    ui->target_sgpa->setText(QString::number(required_grade, 'f', 3));
-
     double plan_gpa = calculate_plan_gpa();
 
     if (target_cgpa != 0) ui->target_textBox->setText(QString::number(target_cgpa, 'f', 3));
@@ -457,15 +458,20 @@ void MainWindow::update_semester_progress(){
         ui->target_sgpa->setText("");
 
         if (current_semester_courses.empty()) {
-            ui->plan_statue->setText("دخل التارجت بتاعك الأول عشان نبدأ نحسب الخطة 🎯");ui->planned_gpa->setText("");
+            ui->plan_statue->setText("دخل التارجت بتاعك الأول عشان نبدأ نحسب الخطة 🎯");
+            ui->planned_gpa->setText("");
         } else {
-            ui->plan_statue->setText("المواد اتضافت، ناقص بس تكتب التارجت عشان نقيم الخطة 🔍");ui->planned_gpa->setText(QString::number(plan_gpa, 'f', 3));
+            ui->plan_statue->setText("المواد اتضافت، ناقص بس تكتب التارجت عشان نقيم الخطة 🔍");
+            ui->planned_gpa->setText(QString::number(plan_gpa, 'f', 3));
         }
         return;
     }
 
-    if (plan_gpa == 0 && target_CGPA != 0)
+    double required_grade = calculate_target(current_CGPA, current_hours, semester_credits, target_CGPA);
+
+    if (plan_gpa == 0 && target_CGPA != 0) {
         ui->plan_statue->setText("التارجت جاهز، ضيف بقى المواد عشان نشوف هنوصله إزاي 📝");
+    }
     else if (required_grade > 4.0) {
         ui->plan_statue->setText("حسابياً، التارجت ده صعب ييجي في ترم واحد. جرب تقلل الرقم شوية أو تزود مواد ترفع معاك 💡");
     }
@@ -482,6 +488,7 @@ void MainWindow::update_semester_progress(){
     if (current_semester_courses.empty()) {
         ui->planned_gpa->setText("");
     } else {
+        ui->target_sgpa->setText(QString::number(required_grade, 'f', 3));
         ui->planned_gpa->setText(QString::number(plan_gpa, 'f', 3));
     }
 }
@@ -604,13 +611,13 @@ void MainWindow::on_linkedin_clicked()
 
 void MainWindow::on_github_clicked()
 {
-    QString github = "github.com/mostafa-hussain-1";
+    QString github = "https://github.com/mostafa-hussain-1";
     QDesktopServices::openUrl(QUrl(github));
 }
 
 void MainWindow::on_complaints_clicked()
 {
-    QString form = "docs.google.com/forms/d/e/1FAIpQLSen9Q5RbkHqKpQbfR1toD6z2DVqfTSOT6-c_vw8PSLZO-IIQQ/viewform?usp=header";
+    QString form = "https://docs.google.com/forms/d/e/1FAIpQLSen9Q5RbkHqKpQbfR1toD6z2DVqfTSOT6-c_vw8PSLZO-IIQQ/viewform";
     QDesktopServices::openUrl(QUrl(form));
 }
 

@@ -12,7 +12,7 @@ using namespace std;
 
 string GetDatabasePath(const string& fileName) {
 
-    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    QString appDataPath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation);
 
     QString appFolder = appDataPath + "/SGA";
 

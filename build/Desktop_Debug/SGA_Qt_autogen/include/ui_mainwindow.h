@@ -279,7 +279,7 @@ public:
 "    color: #FFFFFF;\n"
 "    border: 1px solid #444444;\n"
 "    border-radius: 5px;\n"
-"    padding: 6px;\n"
+"    padding: 1px;\n"
 "}\n"
 "\n"
 "QLineEdit:focus {\n"
@@ -790,6 +790,13 @@ public:
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+        QWidget::setTabOrder(code, name);
+        QWidget::setTabOrder(name, hours);
+        QWidget::setTabOrder(hours, semester);
+        QWidget::setTabOrder(semester, grade);
+        QWidget::setTabOrder(grade, count_in_gpa);
+        QWidget::setTabOrder(count_in_gpa, add_button);
+        QWidget::setTabOrder(add_button, code_2);
         QWidget::setTabOrder(code_2, name_2);
         QWidget::setTabOrder(name_2, hours_2);
         QWidget::setTabOrder(hours_2, grade_2);
@@ -799,26 +806,19 @@ public:
         QWidget::setTabOrder(quiz, year_work);
         QWidget::setTabOrder(year_work, practical_line);
         QWidget::setTabOrder(practical_line, add_button_2);
-        QWidget::setTabOrder(add_button_2, about);
-        QWidget::setTabOrder(about, current_semester);
-        QWidget::setTabOrder(current_semester, tableWidget);
-        QWidget::setTabOrder(tableWidget, updateBtn);
-        QWidget::setTabOrder(updateBtn, dashboard);
-        QWidget::setTabOrder(dashboard, grade);
-        QWidget::setTabOrder(grade, code);
-        QWidget::setTabOrder(code, add_button);
-        QWidget::setTabOrder(add_button, hours);
-        QWidget::setTabOrder(hours, name);
-        QWidget::setTabOrder(name, semester);
-        QWidget::setTabOrder(semester, delete_btn);
+        QWidget::setTabOrder(add_button_2, target_textBox);
+        QWidget::setTabOrder(target_textBox, dashboard);
+        QWidget::setTabOrder(dashboard, current_semester);
+        QWidget::setTabOrder(current_semester, about);
+        QWidget::setTabOrder(about, delete_btn);
         QWidget::setTabOrder(delete_btn, edit_course);
-        QWidget::setTabOrder(edit_course, count_in_gpa);
-        QWidget::setTabOrder(count_in_gpa, registered_courses);
+        QWidget::setTabOrder(edit_course, tableWidget);
+        QWidget::setTabOrder(tableWidget, registered_courses);
         QWidget::setTabOrder(registered_courses, delete_btn_2);
         QWidget::setTabOrder(delete_btn_2, edit_course_2);
         QWidget::setTabOrder(edit_course_2, submit);
-        QWidget::setTabOrder(submit, target_textBox);
-        QWidget::setTabOrder(target_textBox, complaints);
+        QWidget::setTabOrder(submit, updateBtn);
+        QWidget::setTabOrder(updateBtn, complaints);
         QWidget::setTabOrder(complaints, linkedin);
         QWidget::setTabOrder(linkedin, github);
 

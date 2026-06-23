@@ -1,0 +1,9 @@
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/SGA_Qt.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/edit_cache.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/rebuild_cache.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/list_install_components.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/install.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/install/local.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/install/strip.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/SGA_Qt_autogen_timestamp_deps.dir
+/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Release2/CMakeFiles/SGA_Qt_autogen.dir

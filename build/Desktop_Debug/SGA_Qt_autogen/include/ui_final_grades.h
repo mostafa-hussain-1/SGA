@@ -80,6 +80,7 @@ public:
         label = new QLabel(final_grades);
         label->setObjectName("label");
         label->setGeometry(QRect(115, 20, 181, 31));
+        QWidget::setTabOrder(scrollArea, pushButton);
 
         retranslateUi(final_grades);
 

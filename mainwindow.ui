@@ -153,7 +153,7 @@ QLineEdit {
     color: #FFFFFF;
     border: 1px solid #444444;
     border-radius: 5px;
-    padding: 6px;
+    padding: 1px;
 }
 
 QLineEdit:focus {
@@ -1987,6 +1987,13 @@ QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>code</tabstop>
+  <tabstop>name</tabstop>
+  <tabstop>hours</tabstop>
+  <tabstop>semester</tabstop>
+  <tabstop>grade</tabstop>
+  <tabstop>count_in_gpa</tabstop>
+  <tabstop>add_button</tabstop>
   <tabstop>code_2</tabstop>
   <tabstop>name_2</tabstop>
   <tabstop>hours_2</tabstop>
@@ -1997,25 +2004,18 @@ QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
   <tabstop>year_work</tabstop>
   <tabstop>practical_line</tabstop>
   <tabstop>add_button_2</tabstop>
-  <tabstop>about</tabstop>
-  <tabstop>current_semester</tabstop>
-  <tabstop>tableWidget</tabstop>
-  <tabstop>updateBtn</tabstop>
+  <tabstop>target_textBox</tabstop>
   <tabstop>dashboard</tabstop>
-  <tabstop>grade</tabstop>
-  <tabstop>code</tabstop>
-  <tabstop>add_button</tabstop>
-  <tabstop>hours</tabstop>
-  <tabstop>name</tabstop>
-  <tabstop>semester</tabstop>
+  <tabstop>current_semester</tabstop>
+  <tabstop>about</tabstop>
   <tabstop>delete_btn</tabstop>
   <tabstop>edit_course</tabstop>
-  <tabstop>count_in_gpa</tabstop>
+  <tabstop>tableWidget</tabstop>
   <tabstop>registered_courses</tabstop>
   <tabstop>delete_btn_2</tabstop>
   <tabstop>edit_course_2</tabstop>
   <tabstop>submit</tabstop>
-  <tabstop>target_textBox</tabstop>
+  <tabstop>updateBtn</tabstop>
   <tabstop>complaints</tabstop>
   <tabstop>linkedin</tabstop>
   <tabstop>github</tabstop>

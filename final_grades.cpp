@@ -25,6 +25,9 @@ final_grades::~final_grades()
 }
 
 void final_grades::load(){
+
+    this->setFixedSize(410, 512);
+
     QLayout* panelLayout = ui->final_grades_panel->layout();
     if (panelLayout != nullptr) {
         QLayoutItem* item;
