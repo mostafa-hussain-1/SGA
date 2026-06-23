@@ -11,6 +11,7 @@
 #include <QBarSet>
 #include <QBarSeries>
 #include <QBarCategoryAxis>
+#include <QStyledItemDelegate>
 #include "sga.h"
 #include "semester_progress.h"
 #include "dataBase.h"
@@ -103,7 +104,7 @@ void MainWindow::fixed_properties(){
     ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
 
     ui->grade->setView(new QListView());
-
+    ui->target_grade->setView(new QListView());
 
     ui->hours->setValidator(new QIntValidator(1, 1, this));
     ui->semester->setValidator(new QIntValidator(1, 20, this));
@@ -154,10 +155,10 @@ void MainWindow::fixed_properties(){
     }
 
     // update grade combobox
-    ui->grade_2->clear();
-    ui->grade_2->addItem("Choose...");
+    ui->target_grade->clear();
+    ui->target_grade->addItem("Choose...");
     for (int i = 0; i < grade_scale.size() - 1; i++) {
-        ui->grade_2->addItem(toQString(grade_scale[i]));
+        ui->target_grade->addItem(toQString(grade_scale[i]));
     }
 
 
@@ -497,7 +498,7 @@ void MainWindow::clear_sem_progress_input(){
     ui->code_2->clear();
     ui->name_2->clear();
     ui->hours_2->clear();
-    ui->grade_2->setCurrentIndex(0);
+    ui->target_grade->setCurrentIndex(0);
     ui->has_practical->setChecked(false);
     ui->mid_term->clear();
     ui->quiz->clear();
@@ -510,7 +511,7 @@ bool semester_edit = false;
 
 void MainWindow::on_add_button_2_clicked()
 {
-    if (ui->code_2->text().isEmpty() || ui->name_2->text().isEmpty() || ui->hours_2->text().isEmpty() || ui->grade_2->currentIndex() == 0) {
+    if (ui->code_2->text().isEmpty() || ui->name_2->text().isEmpty() || ui->hours_2->text().isEmpty() || ui->target_grade->currentIndex() == 0) {
         QMessageBox::warning(this, "بيانات ناقصة", "في بيانات مهمة ناقصة! كمل باقي الخانات الفاضية الأول عشان نعرف نسجل المادة صح 📝");
         return;
     }
@@ -519,7 +520,7 @@ void MainWindow::on_add_button_2_clicked()
     c.course_code = toStdString(ui->code_2->text());
     c.course_name = toStdString(ui->name_2->text());
     c.credit_hours = stoi(toStdString(ui->hours_2->text()));
-    c.target_grade = toStdString(ui->grade_2->currentText());
+    c.target_grade = toStdString(ui->target_grade->currentText());
     c.has_practical = ui->count_in_gpa->isChecked();
 
 
@@ -572,19 +573,6 @@ void MainWindow::on_add_button_2_clicked()
     clear_sem_progress_input();
 }
 
-
-void MainWindow::on_has_practical_checkStateChanged(const Qt::CheckState &arg1)
-{
-    if (ui->has_practical->isChecked()) {
-        ui->practical_label->show();
-        ui->practical_line->show();
-    }
-    else {
-        ui->practical_label->hide();
-        ui->practical_line->hide();
-    }
-}
-
 void MainWindow::on_target_textBox_editingFinished()
 {
     if (ui->target_textBox->text().isEmpty()) {
@@ -635,7 +623,7 @@ void MainWindow::on_edit_course_2_clicked()
     ui->code_2->setText(QString::fromStdString(c.course_code));
     ui->name_2->setText(QString::fromStdString(c.course_name));
     ui->hours_2->setText(QString::number(c.credit_hours));
-    ui->grade_2->setCurrentText(QString::fromStdString(c.target_grade));
+    ui->target_grade->setCurrentText(QString::fromStdString(c.target_grade));
 
     ui->has_practical->setChecked(c.has_practical);
     ui->practical_label->setVisible(c.has_practical);
@@ -672,12 +660,22 @@ void MainWindow::on_submit_clicked()
         QMessageBox::warning(this, "الترم فاضي", "مفيش أي مواد متسجلة في الترم ده عشان تترحل.. ضيف موادك الأول 🤷‍♂️");
         return;
     }
+    if (target_cgpa == 0){
 
+        //return;
+    }
     final_grades grades_form(this);
     grades_form.exec();
 
     update_dashboard();
     update_dashBoard();
     update_semester_progress();
+}
+
+
+void MainWindow::on_has_practical_toggled(bool checked)
+{
+    ui->practical_label->setVisible(checked);
+    ui->practical_line->setVisible(checked);
 }
 

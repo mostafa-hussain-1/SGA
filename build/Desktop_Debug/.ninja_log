@@ -1,107 +1,46 @@
 # ninja log v7
-11	105	1782133911787381300	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-11	105	1782133911787381300	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-11	105	1782133911787381300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-11	105	1782133911787381300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-268	1895	1782120277159172700	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/mocs_compilation.cpp.o	92c5452267311f6a
-277	1903	1782118551856606100	CMakeFiles/SGA_Qt.dir/main.cpp.o	6f29bfa9d7287666
-282	2603	1782133912057656800	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-2603	3036	1782133914378749500	SGA_Qt	4b56aeeab3fb066e
-494	1342	1781939093584396300	CMakeFiles/SGA_Qt.dir/semester_progress.cpp.o	406f016db0808286
-85	416	1782125333777079000	CMakeFiles/SGA_Qt.dir/home_page.cpp.o	4005f9ad51416289
-493	3071	1781939093583389900	CMakeFiles/SGA_Qt.dir/dataBase.cpp.o	96228d7d6acfb4f2
-107	282	1782133912055012100	SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
-107	282	1782133912055012100	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
-282	442	1782133912058066800	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o	dd4eeafc68fa61e9
-5	25	1781901771865323000	CMakeFiles/clean.additional	4f1486b7750b057f
-25	33	1781901771885417400	clean	7adf74806070bde8
-4	345	1782226182498783500	build.ninja	65fd6a6fba976c77
-4	345	1782226182490740500	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/cmake_install.cmake	65fd6a6fba976c77
-282	1974	1782133912057878600	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
+7	48	1782252932225225400	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
+7	48	1782252932225225400	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
+7	48	1782252932225225400	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
+7	48	1782252932225225400	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
+512	2381	1782252083206089500	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/mocs_compilation.cpp.o	92c5452267311f6a
+512	2765	1782252083206346000	CMakeFiles/SGA_Qt.dir/main.cpp.o	6f29bfa9d7287666
+48	2434	1782252932266872700	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
+2434	2875	1782252934652697300	SGA_Qt	4b56aeeab3fb066e
+512	924	1782252083207052000	CMakeFiles/SGA_Qt.dir/semester_progress.cpp.o	406f016db0808286
+512	1102	1782252083206836400	CMakeFiles/SGA_Qt.dir/home_page.cpp.o	4005f9ad51416289
+512	2051	1782252083206710500	CMakeFiles/SGA_Qt.dir/dataBase.cpp.o	96228d7d6acfb4f2
+323	511	1782252083203574500	SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
+323	511	1782252083203574500	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
+513	761	1782252083207618200	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o	dd4eeafc68fa61e9
+6	40	1782252082603294000	CMakeFiles/clean.additional	4f1486b7750b057f
+41	55	1782252082637409800	clean	7adf74806070bde8
 5	580	1782226182498783500	build.ninja	65fd6a6fba976c77
 5	580	1782226182498783500	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/cmake_install.cmake	65fd6a6fba976c77
-10	79	1782226182661058300	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-10	79	1782226182661058300	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-10	79	1782226182661058300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-10	79	1782226182661058300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-79	341	1782226182988167500	SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
-79	341	1782226182988167500	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
-343	670	1782226182994300700	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o	dd4eeafc68fa61e9
-342	2481	1782226182993547100	CMakeFiles/SGA_Qt.dir/dataBase.cpp.o	96228d7d6acfb4f2
-343	3166	1782226182993956300	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-342	4181	1782226182993141800	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-4181	4768	1782226186832733000	SGA_Qt	4b56aeeab3fb066e
-10	82	1782226357482357200	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-10	82	1782226357482357200	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-10	82	1782226357482357200	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-10	82	1782226357482357200	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-83	2853	1782226357555531000	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-83	3931	1782226357555118600	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-3931	4688	1782226361403837100	SGA_Qt	4b56aeeab3fb066e
-12	106	1782227273483359000	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-12	106	1782227273483359000	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-12	106	1782227273483359000	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-12	106	1782227273483359000	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-109	2943	1782227273580192100	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-108	4036	1782227273579558500	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-4036	4893	1782227277507713800	SGA_Qt	4b56aeeab3fb066e
-34	95	1782227354934751600	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-34	95	1782227354934751600	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-34	95	1782227354934751600	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-34	95	1782227354934751600	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-96	2992	1782227354996294700	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-95	4114	1782227354995876400	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-4114	4789	1782227359014617700	SGA_Qt	4b56aeeab3fb066e
-15	133	1782227771811975900	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-15	133	1782227771811975900	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-15	133	1782227771811975900	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-15	133	1782227771811975900	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-135	2962	1782227771932793600	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-135	4006	1782227771932187400	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-4006	4659	1782227775803194000	SGA_Qt	4b56aeeab3fb066e
-14	97	1782227879851969600	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-14	97	1782227879851969600	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-14	97	1782227879851969600	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-14	97	1782227879851969600	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-98	2966	1782227879935796300	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-12	80	1782227914333860300	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-12	80	1782227914333860300	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-12	80	1782227914333860300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-12	80	1782227914333860300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-82	2877	1782227914403449100	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-82	3998	1782227914402988800	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-3998	4721	1782227918319570100	SGA_Qt	4b56aeeab3fb066e
-9	63	1782228266417138500	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-9	63	1782228266417138500	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-9	63	1782228266417138500	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-9	63	1782228266417138500	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-65	2747	1782228266472942200	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-64	3795	1782228266472574500	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-3795	4381	1782228270203257000	SGA_Qt	4b56aeeab3fb066e
-10	66	1782228565092088400	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-10	66	1782228565092088400	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-10	66	1782228565092088400	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-10	66	1782228565092088400	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-90	2786	1782228565172239500	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-89	3782	1782228565171488000	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-3782	4387	1782228568864350600	SGA_Qt	4b56aeeab3fb066e
-8	65	1782229033613302200	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-8	65	1782229033613302200	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-8	65	1782229033613302200	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-8	65	1782229033613302200	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-66	2751	1782229033671062700	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-27	110	1782229085277489000	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-27	110	1782229085277489000	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-27	110	1782229085277489000	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-27	110	1782229085277489000	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-113	2933	1782229085363001800	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-112	4055	1782229085362418900	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-4055	4692	1782229089305286400	SGA_Qt	4b56aeeab3fb066e
-14	91	1782229457077925300	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-14	91	1782229457077925300	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-14	91	1782229457077925300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
-14	91	1782229457077925300	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
-93	2245	1782229457156477100	CMakeFiles/SGA_Qt.dir/dataBase.cpp.o	96228d7d6acfb4f2
-95	2894	1782229457157942400	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
-93	3967	1782229457156003900	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
-3967	4624	1782229461030679400	SGA_Qt	4b56aeeab3fb066e
+49	1798	1782252932267139400	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
+9	77	1782253180453779800	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
+9	77	1782253180453779800	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
+9	77	1782253180453779800	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
+9	77	1782253180453779800	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
+78	1840	1782253180522977000	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
+78	2555	1782253180522600900	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
+2555	3050	1782253182999333500	SGA_Qt	4b56aeeab3fb066e
+2	24	1782253304792562800	CMakeFiles/clean.additional	4f1486b7750b057f
+24	35	1782253304814489100	clean	7adf74806070bde8
+3	17	1782253308471078300	CMakeFiles/clean.additional	4f1486b7750b057f
+18	24	1782253308486062000	clean	7adf74806070bde8
+8	297	1782253308805698700	SGA_Qt_autogen/timestamp	ba51edf7b6cac409
+8	297	1782253308805698700	SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
+8	297	1782253308805698700	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp	ba51edf7b6cac409
+8	297	1782253308805698700	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp	ba51edf7b6cac409
+298	484	1782253309001310800	SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
+298	484	1782253309001310800	/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp	19d15b05e17cb573
+486	745	1782253309006240000	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o	dd4eeafc68fa61e9
+485	886	1782253309005758800	CMakeFiles/SGA_Qt.dir/semester_progress.cpp.o	406f016db0808286
+485	941	1782253309005530900	CMakeFiles/SGA_Qt.dir/home_page.cpp.o	4005f9ad51416289
+485	2196	1782253309005317300	CMakeFiles/SGA_Qt.dir/dataBase.cpp.o	96228d7d6acfb4f2
+484	2406	1782253309004628700	CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/mocs_compilation.cpp.o	92c5452267311f6a
+485	2599	1782253309005979300	CMakeFiles/SGA_Qt.dir/final_grades.cpp.o	e444c8092ea9f439
+484	2901	1782253309004900400	CMakeFiles/SGA_Qt.dir/main.cpp.o	6f29bfa9d7287666
+485	3636	1782253309005119000	CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o	53e0fa7d4b876048
+3637	4088	1782253312157322000	SGA_Qt	4b56aeeab3fb066e

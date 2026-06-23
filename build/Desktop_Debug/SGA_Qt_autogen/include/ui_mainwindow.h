@@ -94,13 +94,13 @@ public:
     QLineEdit *quiz;
     QLineEdit *hours_2;
     QLineEdit *name_2;
-    QComboBox *grade_2;
     QLabel *practical_label;
     QLineEdit *practical_line;
     QLabel *label_24;
     QLineEdit *year_work;
     QLabel *label_25;
     QLineEdit *mid_term;
+    QComboBox *target_grade;
     QFrame *frame_8;
     QTableWidget *registered_courses;
     QPushButton *delete_btn_2;
@@ -346,7 +346,62 @@ public:
 "\n"
 "/* 4. \330\255\330\247\331\204\330\251 \330\247\331\204\330\247\331\205\330\252\331\212\330\247\330\262 (\331\201\331\210\331\202 85) */\n"
 "QProgressBar[progress_state=\"good\"]::chunk { background-color: #00FF66; }\n"
-"QProgressBar[progress_state=\"good\"] { color: #121212; }"));
+"QProgressBar[progress_state=\"good\"] { color: #121212; }\n"
+"\n"
+"/* 1. \330\247\331\204\330\263\330\267\330\261 \330\257\331\207 \331\207\331\212\331\204\330\272\331\212 \330\247\331\204\331\205\330\261\330\250\330\271 \330\247\331\204\330\243\330\262\330\261\331\202 \330\247\331\204\331\205\331\206\331\202\330\267 \331\205\331\206 \330\271\331\204\331\211 \330\243\331\212 \330\271\331\206\330\265\330\261 \331\201\331\212 \330\247\331\204\330\250\330\261\331\206\330\247\331\205\330\254 \331\206\331\207\330\247\330\246\331\212\330\247\331\213 */\n"
+"* {\n"
+"    outline: none;\n"
+"}\n"
+"\n"
+"/* 2. \330\252\330\270\330\250\331\212"
+                        "\330\267 \330\264\331\203\331\204 \330\247\331\204\331\200 ComboBox \330\271\330\264\330\247\331\206 \331\205\331\212\330\247\330\256\330\257\330\264 \330\264\331\203\331\204 \330\247\331\204\331\210\331\212\331\206\330\257\331\210\330\262 \330\247\331\204\331\202\330\257\331\212\331\205 */\n"
+"QComboBox {\n"
+"    border: 1px solid #333;\n"
+"    border-radius: 4px;\n"
+"    padding: 5px;\n"
+"    background-color: #1e1e1e; /* \330\257\330\261\330\254\330\251 \330\272\330\247\331\205\331\202\330\251 \330\264\331\212\331\203 */\n"
+"    color: white;\n"
+"}\n"
+"QComboBox::drop-down {\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"/* 3. \330\252\330\270\330\250\331\212\330\267 \330\264\331\203\331\204 \330\247\331\204\331\200 CheckBox \330\271\330\264\330\247\331\206 \331\212\330\250\331\202\331\211 \331\205\331\210\330\255\330\257 \331\210\330\253\330\247\330\250\330\252 */\n"
+"QCheckBox {\n"
+"    color: white;\n"
+"    spacing: 5px;\n"
+"}\n"
+"QCheckBox::indicator {\n"
+"    width: 16px;\n"
+"    height: 16px;\n"
+"    border: 1p"
+                        "x solid #555;\n"
+"    border-radius: 3px;\n"
+"    background-color: #1e1e1e;\n"
+"}\n"
+"QCheckBox::indicator:checked {\n"
+"    background-color: #2ea44f; /* \331\204\331\210\331\206 \330\243\330\256\330\266\330\261 \331\204\330\260\331\212\330\260 \331\204\331\205\330\247 \331\212\330\252\330\271\331\204\331\205 \330\271\331\204\331\212\331\207 */\n"
+"    border: 1px solid #2ea44f;\n"
+"}\n"
+"/* \330\252\330\270\330\250\331\212\330\267 \330\247\331\204\331\202\330\247\331\212\331\205\330\251 \330\247\331\204\331\205\331\206\330\263\330\257\331\204\330\251 \331\205\331\206 \330\254\331\210\331\207 \330\271\330\264\330\247\331\206 \330\247\331\204\330\252\330\255\330\257\331\212\330\257 \331\212\330\250\330\247\331\206 \330\250\331\210\330\266\331\210\330\255 */\n"
+"QComboBox QAbstractItemView {\n"
+"    background-color: #1e1e1e; /* \331\204\331\210\331\206 \330\256\331\204\331\201\331\212\330\251 \330\247\331\204\331\202\330\247\331\212\331\205\330\251 */\n"
+"    color: white; /* \331\204\331\210\331\206 \330\247"
+                        "\331\204\331\203\331\204\330\247\331\205 \330\247\331\204\330\271\330\247\330\257\331\212 */\n"
+"    \n"
+"    /* \330\257\331\207 \330\247\331\204\330\263\330\267\330\261 \330\247\331\204\330\263\330\255\330\261\331\212 \330\247\331\204\331\204\331\212 \330\250\331\212\330\271\331\205\331\204 \330\247\331\204\331\204\331\210\331\206 \330\247\331\204\331\205\330\250\331\207\330\254 \331\204\331\205\330\247 \330\252\331\202\331\201 \330\250\330\247\331\204\331\205\330\247\331\210\330\263 */\n"
+"    selection-background-color: #0078D7; /* \330\247\331\204\331\204\331\210\331\206 \330\247\331\204\330\243\330\262\330\261\331\202 \330\250\330\252\330\247\330\271 \330\247\331\204\331\210\331\212\331\206\330\257\331\210\330\262 \330\247\331\204\330\243\330\265\331\204\331\212 */\n"
+"    selection-color: white; /* \331\204\331\210\331\206 \330\247\331\204\331\203\331\204\330\247\331\205 \330\254\331\210\331\207 \330\247\331\204\330\252\330\255\330\257\331\212\330\257 */\n"
+"    \n"
+"    outline: none; /* \330\271\330\264"
+                        "\330\247\331\206 \331\206\331\204\330\272\331\212 \330\247\331\204\331\205\330\261\330\250\330\271 \330\247\331\204\331\205\331\206\331\202\330\267 \330\247\331\204\331\202\330\257\331\212\331\205 */\n"
+"}\n"
+"\n"
+"/* \331\204\331\210 \330\255\330\247\330\250\330\250 \330\252\330\257\331\212 \330\252\330\243\330\253\331\212\330\261 \331\203\331\205\330\247\331\206 \331\204\331\204\331\200 Item \331\206\331\201\330\263\331\207 \331\204\331\205\330\247 \330\252\331\205\330\264\331\212 \330\271\331\204\331\212\331\207 \330\250\330\247\331\204\331\205\330\247\331\210\330\263 */\n"
+"QComboBox QAbstractItemView::item:hover {\n"
+"    background-color: #005a9e; /* \330\257\330\261\330\254\330\251 \330\243\330\262\330\261\331\202 \330\243\330\272\331\205\331\202 \330\264\331\210\331\212\330\251 \331\204\331\204\331\200 Hover */\n"
+"    color: white;\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         frame = new QFrame(centralwidget);
@@ -618,10 +673,6 @@ public:
         name_2->setObjectName("name_2");
         name_2->setGeometry(QRect(160, 158, 207, 29));
         name_2->setFont(font2);
-        grade_2 = new QComboBox(frame_7);
-        grade_2->setObjectName("grade_2");
-        grade_2->setGeometry(QRect(160, 282, 207, 33));
-        grade_2->setFont(font2);
         practical_label = new QLabel(frame_7);
         practical_label->setObjectName("practical_label");
         practical_label->setGeometry(QRect(200, 489, 83, 20));
@@ -646,6 +697,10 @@ public:
         mid_term->setObjectName("mid_term");
         mid_term->setGeometry(QRect(110, 419, 80, 29));
         mid_term->setFont(font2);
+        target_grade = new QComboBox(frame_7);
+        target_grade->setObjectName("target_grade");
+        target_grade->setGeometry(QRect(160, 283, 207, 33));
+        target_grade->setFont(font2);
         frame_8 = new QFrame(page_3);
         frame_8->setObjectName("frame_8");
         frame_8->setGeometry(QRect(396, 195, 868, 332));
@@ -799,8 +854,8 @@ public:
         QWidget::setTabOrder(add_button, code_2);
         QWidget::setTabOrder(code_2, name_2);
         QWidget::setTabOrder(name_2, hours_2);
-        QWidget::setTabOrder(hours_2, grade_2);
-        QWidget::setTabOrder(grade_2, has_practical);
+        QWidget::setTabOrder(hours_2, target_grade);
+        QWidget::setTabOrder(target_grade, has_practical);
         QWidget::setTabOrder(has_practical, mid_term);
         QWidget::setTabOrder(mid_term, quiz);
         QWidget::setTabOrder(quiz, year_work);
@@ -824,7 +879,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        glassContainer->setCurrentIndex(1);
+        glassContainer->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -910,10 +965,10 @@ public:
         label_22->setText(QCoreApplication::translate("MainWindow", "Course Name", nullptr));
         add_button_2->setText(QCoreApplication::translate("MainWindow", "Save Course", nullptr));
         has_practical->setText(QCoreApplication::translate("MainWindow", "Course has a practical exam?", nullptr));
-        grade_2->setProperty("style_type", QVariant(QCoreApplication::translate("MainWindow", "combo", nullptr)));
         practical_label->setText(QCoreApplication::translate("MainWindow", "Practical", nullptr));
         label_24->setText(QCoreApplication::translate("MainWindow", "Year Work", nullptr));
         label_25->setText(QCoreApplication::translate("MainWindow", "Mid Term", nullptr));
+        target_grade->setProperty("style_type", QVariant(QCoreApplication::translate("MainWindow", "combo", nullptr)));
         QTableWidgetItem *___qtablewidgetitem6 = registered_courses->horizontalHeaderItem(0);
         ___qtablewidgetitem6->setText(QCoreApplication::translate("MainWindow", "Code", nullptr));
         QTableWidgetItem *___qtablewidgetitem7 = registered_courses->horizontalHeaderItem(1);

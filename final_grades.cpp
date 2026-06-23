@@ -4,6 +4,7 @@
 #include <QSpacerItem>
 #include <QLayoutItem>
 #include <QMessageBox>
+#include <QListView>
 #include "final_grades.h"
 #include "ui_final_grades.h"
 #include "sga.h"
@@ -57,7 +58,7 @@ void final_grades::load(){
         QComboBox* grade_box = new QComboBox(row_container);
         grade_box->setFixedSize(110, 25);
         grade_box->setStyleSheet("font-family: 'Segoe UI'; font-size: 10pt;");
-
+        grade_box->setView(new QListView());
         for (int i = 0; i < grade_scale.size(); i++) {
             grade_box->addItem(toQString(grade_scale[i]));
         }

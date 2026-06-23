@@ -56,9 +56,6 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "check_updates",
         "on_updateBtn_clicked",
         "on_add_button_2_clicked",
-        "on_has_practical_checkStateChanged",
-        "Qt::CheckState",
-        "arg1",
         "update_semester_progress",
         "clear_sem_progress_input",
         "on_target_textBox_editingFinished",
@@ -67,7 +64,9 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         "on_complaints_clicked",
         "on_edit_course_2_clicked",
         "on_delete_btn_2_clicked",
-        "on_submit_clicked"
+        "on_submit_clicked",
+        "on_has_practical_toggled",
+        "checked"
     };
 
     QtMocHelpers::UintData qt_methods {
@@ -99,28 +98,28 @@ template <> constexpr inline auto MainWindow::qt_create_metaobjectdata<qt_meta_t
         QtMocHelpers::SlotData<void()>(15, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_add_button_2_clicked'
         QtMocHelpers::SlotData<void()>(16, 2, QMC::AccessPrivate, QMetaType::Void),
-        // Slot 'on_has_practical_checkStateChanged'
-        QtMocHelpers::SlotData<void(const Qt::CheckState &)>(17, 2, QMC::AccessPrivate, QMetaType::Void, {{
-            { 0x80000000 | 18, 19 },
-        }}),
         // Slot 'update_semester_progress'
-        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(17, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'clear_sem_progress_input'
-        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(18, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_target_textBox_editingFinished'
-        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(19, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_linkedin_clicked'
-        QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(20, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_github_clicked'
-        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(21, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_complaints_clicked'
-        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(22, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_edit_course_2_clicked'
-        QtMocHelpers::SlotData<void()>(26, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(23, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_delete_btn_2_clicked'
-        QtMocHelpers::SlotData<void()>(27, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(24, 2, QMC::AccessPrivate, QMetaType::Void),
         // Slot 'on_submit_clicked'
-        QtMocHelpers::SlotData<void()>(28, 2, QMC::AccessPrivate, QMetaType::Void),
+        QtMocHelpers::SlotData<void()>(25, 2, QMC::AccessPrivate, QMetaType::Void),
+        // Slot 'on_has_practical_toggled'
+        QtMocHelpers::SlotData<void(bool)>(26, 2, QMC::AccessPrivate, QMetaType::Void, {{
+            { QMetaType::Bool, 27 },
+        }}),
     };
     QtMocHelpers::UintData qt_properties {
     };
@@ -157,16 +156,16 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 10: _t->check_updates(); break;
         case 11: _t->on_updateBtn_clicked(); break;
         case 12: _t->on_add_button_2_clicked(); break;
-        case 13: _t->on_has_practical_checkStateChanged((*reinterpret_cast<std::add_pointer_t<Qt::CheckState>>(_a[1]))); break;
-        case 14: _t->update_semester_progress(); break;
-        case 15: _t->clear_sem_progress_input(); break;
-        case 16: _t->on_target_textBox_editingFinished(); break;
-        case 17: _t->on_linkedin_clicked(); break;
-        case 18: _t->on_github_clicked(); break;
-        case 19: _t->on_complaints_clicked(); break;
-        case 20: _t->on_edit_course_2_clicked(); break;
-        case 21: _t->on_delete_btn_2_clicked(); break;
-        case 22: _t->on_submit_clicked(); break;
+        case 13: _t->update_semester_progress(); break;
+        case 14: _t->clear_sem_progress_input(); break;
+        case 15: _t->on_target_textBox_editingFinished(); break;
+        case 16: _t->on_linkedin_clicked(); break;
+        case 17: _t->on_github_clicked(); break;
+        case 18: _t->on_complaints_clicked(); break;
+        case 19: _t->on_edit_course_2_clicked(); break;
+        case 20: _t->on_delete_btn_2_clicked(); break;
+        case 21: _t->on_submit_clicked(); break;
+        case 22: _t->on_has_practical_toggled((*reinterpret_cast<std::add_pointer_t<bool>>(_a[1]))); break;
         default: ;
         }
     }

@@ -216,7 +216,58 @@ QProgressBar[progress_state=&quot;mid&quot;] { color: #FFFFFF; }
 
 /* 4. حالة الامتياز (فوق 85) */
 QProgressBar[progress_state=&quot;good&quot;]::chunk { background-color: #00FF66; }
-QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
+QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }
+
+/* 1. السطر ده هيلغي المربع الأزرق المنقط من على أي عنصر في البرنامج نهائياً */
+* {
+    outline: none;
+}
+
+/* 2. تظبيط شكل الـ ComboBox عشان مياخدش شكل الويندوز القديم */
+QComboBox {
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #1e1e1e; /* درجة غامقة شيك */
+    color: white;
+}
+QComboBox::drop-down {
+    border: none;
+}
+
+/* 3. تظبيط شكل الـ CheckBox عشان يبقى موحد وثابت */
+QCheckBox {
+    color: white;
+    spacing: 5px;
+}
+QCheckBox::indicator {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #555;
+    border-radius: 3px;
+    background-color: #1e1e1e;
+}
+QCheckBox::indicator:checked {
+    background-color: #2ea44f; /* لون أخضر لذيذ لما يتعلم عليه */
+    border: 1px solid #2ea44f;
+}
+/* تظبيط القايمة المنسدلة من جوه عشان التحديد يبان بوضوح */
+QComboBox QAbstractItemView {
+    background-color: #1e1e1e; /* لون خلفية القايمة */
+    color: white; /* لون الكلام العادي */
+    
+    /* ده السطر السحري اللي بيعمل اللون المبهج لما تقف بالماوس */
+    selection-background-color: #0078D7; /* اللون الأزرق بتاع الويندوز الأصلي */
+    selection-color: white; /* لون الكلام جوه التحديد */
+    
+    outline: none; /* عشان نلغي المربع المنقط القديم */
+}
+
+/* لو حابب تدي تأثير كمان للـ Item نفسه لما تمشي عليه بالماوس */
+QComboBox QAbstractItemView::item:hover {
+    background-color: #005a9e; /* درجة أزرق أغمق شوية للـ Hover */
+    color: white;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -677,7 +728,7 @@ QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
      <string/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame_5">
@@ -1319,25 +1370,6 @@ QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
         </font>
        </property>
       </widget>
-      <widget class="QComboBox" name="grade_2">
-       <property name="geometry">
-        <rect>
-         <x>160</x>
-         <y>282</y>
-         <width>207</width>
-         <height>33</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="style_type" stdset="0">
-        <string>combo</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="practical_label">
        <property name="geometry">
         <rect>
@@ -1441,6 +1473,25 @@ QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
          <pointsize>12</pointsize>
          <bold>false</bold>
         </font>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="target_grade">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>283</y>
+         <width>207</width>
+         <height>33</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="style_type" stdset="0">
+        <string>combo</string>
        </property>
       </widget>
      </widget>
@@ -1997,7 +2048,7 @@ QProgressBar[progress_state=&quot;good&quot;] { color: #121212; }</string>
   <tabstop>code_2</tabstop>
   <tabstop>name_2</tabstop>
   <tabstop>hours_2</tabstop>
-  <tabstop>grade_2</tabstop>
+  <tabstop>target_grade</tabstop>
   <tabstop>has_practical</tabstop>
   <tabstop>mid_term</tabstop>
   <tabstop>quiz</tabstop>

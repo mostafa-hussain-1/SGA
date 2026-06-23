@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Submit Grades</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QLabel {
@@ -43,7 +43,22 @@ QPushButton {
 QPushButton:hover {
     background-color: #33FF88;
 }
-</string>
+QComboBox QAbstractItemView {
+    background-color: #1e1e1e; /* لون خلفية القايمة */
+    color: white; /* لون الكلام العادي */
+    
+    /* ده السطر السحري اللي بيعمل اللون المبهج لما تقف بالماوس */
+    selection-background-color: #0078D7; /* اللون الأزرق بتاع الويندوز الأصلي */
+    selection-color: white; /* لون الكلام جوه التحديد */
+    
+    outline: none; /* عشان نلغي المربع المنقط القديم */
+}
+
+/* لو حابب تدي تأثير كمان للـ Item نفسه لما تمشي عليه بالماوس */
+QComboBox QAbstractItemView::item:hover {
+    background-color: #005a9e; /* درجة أزرق أغمق شوية للـ Hover */
+    color: white;
+}</string>
   </property>
   <widget class="QScrollArea" name="scrollArea">
    <property name="geometry">

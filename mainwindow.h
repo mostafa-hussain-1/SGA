@@ -39,7 +39,6 @@ private slots:
     void check_updates();
     void on_updateBtn_clicked();
     void on_add_button_2_clicked();
-    void on_has_practical_checkStateChanged(const Qt::CheckState &arg1);
 
     void update_semester_progress();
     void clear_sem_progress_input();
@@ -50,5 +49,6 @@ private slots:
     void on_edit_course_2_clicked();
     void on_delete_btn_2_clicked();
     void on_submit_clicked();
+    void on_has_practical_toggled(bool checked);
 };
 #endif // MAINWINDOW_H
