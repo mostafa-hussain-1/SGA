@@ -32,7 +32,7 @@ jobs:
     - name: Run windeployqt
       run: |
         cd build_ci
-        windeployqt --no-translations SGA_Qt.exe
+        windeployqt --no-translations SGAPlus.exe
 
     - name: Upload Application
       uses: actions/upload-artifact@v4
