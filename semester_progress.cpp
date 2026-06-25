@@ -1,7 +1,8 @@
 #include <string>
 #include <fstream>
-#include "sga.h"
+#include "dash_board.h"
 #include "semester_progress.h"
+#include "dataBase.h"
 using namespace std;
 
 
@@ -28,6 +29,40 @@ int current_term_credits() {
 	}
 	return currentTermCredits;
 }
+
+
+CourseStatus process_semester_course(semester_course& c, bool is_edit, int edit_index) {
+
+    c.total_year_work = c.midterm + c.quiz + c.year_work + c.practical;
+    for (int i = 0; i < grade_scale.size(); i++) {
+        if (grade_scale[i] == c.target_grade) {
+            c.required_final_grade = grade_marks[i] - c.total_year_work;
+            c.points = grade_points[i];
+            break;
+        }
+    }
+
+    for (int i = courses.size() - 1; i >= 0; i--) {
+        if (c.course_code == courses[i].code && (c.target_grade == "B+" || c.target_grade == "A-" || c.target_grade == "A" || c.target_grade == "A+")) {
+            return CourseStatus::RETAKE_ERROR;
+        }
+    }
+
+    if (!is_edit) {
+        for (int i = 0; i < current_semester_courses.size(); i++) {
+            if (c.course_code == current_semester_courses[i].course_code) {
+                return CourseStatus::DUPLICATE_ERROR;
+            }
+        }
+        add_sem_course(c);
+    } else {
+        current_semester_courses[edit_index] = c;
+    }
+
+    save_all_to_file();
+    return CourseStatus::SUCCESS;
+}
+
 
 void add_sem_course(semester_course c) {
 	

@@ -7,18 +7,18 @@ SGA_Qt_autogen/timestamp: \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/4.3.0/CMakeCXXCompiler.cmake \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/4.3.0/CMakeSystem.cmake \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/moc_predefs.h \
+	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/dash_board.cpp \
+	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/dash_board.h \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/dataBase.cpp \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/dataBase.h \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/final_grades.cpp \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/final_grades.h \
-	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/home_page.cpp \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/main.cpp \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/mainwindow.cpp \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/mainwindow.h \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/res.qrc \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/semester_progress.cpp \
 	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/semester_progress.h \
-	/run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/sga.h \
 	/usr/include/alloca.h \
 	/usr/include/asm-generic/bitsperlong.h \
 	/usr/include/asm-generic/errno-base.h \

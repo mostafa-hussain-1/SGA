@@ -638,6 +638,12 @@
 			null
 		],
 		[
+			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/dash_board.h",
+			"MU",
+			"EWIEGA46WW/moc_dash_board.cpp",
+			null
+		],
+		[
 			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/dataBase.h",
 			"MU",
 			"EWIEGA46WW/moc_dataBase.cpp",
@@ -659,12 +665,6 @@
 			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/semester_progress.h",
 			"MU",
 			"EWIEGA46WW/moc_semester_progress.cpp",
-			null
-		],
-		[
-			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/sga.h",
-			"MU",
-			"EWIEGA46WW/moc_sga.cpp",
 			null
 		]
 	],
@@ -740,17 +740,17 @@
 	"SOURCES" : 
 	[
 		[
+			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/dash_board.cpp",
+			"MU",
+			null
+		],
+		[
 			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/dataBase.cpp",
 			"MU",
 			null
 		],
 		[
 			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/final_grades.cpp",
-			"MU",
-			null
-		],
-		[
-			"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/home_page.cpp",
 			"MU",
 			null
 		],

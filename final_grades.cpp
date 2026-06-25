@@ -7,7 +7,7 @@
 #include <QListView>
 #include "final_grades.h"
 #include "ui_final_grades.h"
-#include "sga.h"
+#include "dash_board.h"
 #include "semester_progress.h"
 #include "mainwindow.h"
 #include "dataBase.h"

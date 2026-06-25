@@ -20,6 +20,12 @@ struct semester_course {
 	double required_final_grade;
 };
 
+enum class CourseStatus {
+    SUCCESS,
+    RETAKE_ERROR,
+    DUPLICATE_ERROR
+};
+
 extern double target_cgpa;
 
 extern SGA_array<semester_course> current_semester_courses;
@@ -27,6 +33,8 @@ extern SGA_array<semester_course> current_semester_courses;
 double calculate_target(double currentCGPA, int currentCredits, int currentTermCredits, double targetCGPA);
 
 int current_term_credits();
+
+CourseStatus process_semester_course(semester_course& c, bool is_edit, int edit_index);
 
 void add_sem_course(semester_course c);
 

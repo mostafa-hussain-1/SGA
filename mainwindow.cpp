@@ -12,7 +12,7 @@
 #include <QBarSeries>
 #include <QBarCategoryAxis>
 #include <QStyledItemDelegate>
-#include "sga.h"
+#include "dash_board.h"
 #include "semester_progress.h"
 #include "dataBase.h"
 #include "final_grades.h"
@@ -45,7 +45,8 @@ void MainWindow::onNetworkReply(QNetworkReply *reply)
 
     QStringList lines = response.split("\n", Qt::SkipEmptyParts);
 
-    double current_version = 1.0;
+    double current_version = 1.1;
+    ui->version->setText("SGA+ v1.1");
     QString message = "";
 
     for (const QString &line : lines) {
@@ -85,14 +86,17 @@ void MainWindow::on_updateBtn_clicked()
     }
 }
 
-
-// dash board functions
+// setup settings
 
 void MainWindow::fixed_properties(){
 
     this->setFixedSize(1289, 817);
+    setup_tables_ui();
+    setup_validators();
+    setup_general_ui();
+}
 
-
+void MainWindow::setup_tables_ui(){
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->tableWidget->horizontalHeader()->setSectionResizeMode(QHeaderView::Fixed);
     ui->tableWidget->setColumnWidth(0, 150);
@@ -102,73 +106,6 @@ void MainWindow::fixed_properties(){
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->tableWidget->setSelectionMode(QAbstractItemView::SingleSelection);
-
-    ui->grade->setView(new QListView());
-    ui->target_grade->setView(new QListView());
-
-    ui->hours->setValidator(new QIntValidator(1, 1, this));
-    ui->semester->setValidator(new QIntValidator(1, 20, this));
-
-    ui->hours_2->setValidator(new QIntValidator(1, 1, this));
-    ui->practical_line->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-    ui->quiz->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-    ui->mid_term->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-    ui->year_work->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-
-    ui->target_textBox->setValidator(new QDoubleValidator(0.00, 4.00, 3, this));
-
-    ui->glassContainer->setCurrentIndex(0);
-
-
-    QRegularExpression rx("^[^,]*$");
-    QRegularExpressionValidator *commaValidator = new QRegularExpressionValidator(rx, this);
-    ui->code->setValidator(commaValidator);
-    ui->name->setValidator(commaValidator);
-    ui->code_2->setValidator(commaValidator);
-    ui->name_2->setValidator(commaValidator);
-
-
-    ui->tableWidget->setAlternatingRowColors(true);
-
-
-    ui->updateBtn->hide();
-    ui->messageLabel->hide();
-
-    ui->has_practical->setChecked(false);
-    ui->practical_label->hide();
-    ui->practical_line->hide();
-
-
-    ui->progressBar->setRange(0, 100);
-    ui->progressBar->setTextVisible(true);
-
-
-    if (target_cgpa == 0) {
-        ui->plan_statue->setText("دخل التارجت بتاعك الأول عشان نبدأ نحسب الخطة 🎯");
-    }
-
-    // fill in grade combobox
-    ui->grade->clear();
-    ui->grade->addItem("Choose...");
-    for (int i = 0; i < grade_scale.size(); i++) {
-        ui->grade->addItem(toQString(grade_scale[i]));
-    }
-
-    // update grade combobox
-    ui->target_grade->clear();
-    ui->target_grade->addItem("Choose...");
-    for (int i = 0; i < grade_scale.size() - 1; i++) {
-        ui->target_grade->addItem(toQString(grade_scale[i]));
-    }
-
-
-
-    ui->delete_btn->style()->unpolish(ui->delete_btn);
-    ui->delete_btn->style()->polish(ui->delete_btn);
-
-    ui->title_lbl->style()->unpolish(ui->title_lbl);
-    ui->title_lbl->style()->polish(ui->title_lbl);
-
 
 
     ui->registered_courses->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -186,6 +123,67 @@ void MainWindow::fixed_properties(){
     ui->registered_courses->setSelectionBehavior(QAbstractItemView::SelectRows);
     ui->registered_courses->setSelectionMode(QAbstractItemView::SingleSelection);
 }
+
+void MainWindow::setup_validators(){
+    ui->hours->setValidator(new QIntValidator(1, 1, this));
+    ui->semester->setValidator(new QIntValidator(1, 20, this));
+
+    ui->hours_2->setValidator(new QIntValidator(1, 1, this));
+    ui->practical_line->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+    ui->quiz->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+    ui->mid_term->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+    ui->year_work->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
+
+    ui->target_textBox->setValidator(new QDoubleValidator(0.00, 4.00, 3, this));
+
+
+    QRegularExpression rx("^[^,]*$");
+    QRegularExpressionValidator *commaValidator = new QRegularExpressionValidator(rx, this);
+    ui->code->setValidator(commaValidator);
+    ui->name->setValidator(commaValidator);
+    ui->code_2->setValidator(commaValidator);
+    ui->name_2->setValidator(commaValidator);
+
+}
+
+void MainWindow::setup_general_ui(){
+    ui->grade->setView(new QListView());
+    ui->target_grade->setView(new QListView());
+    // fill in grade combobox
+    ui->grade->clear();
+    ui->grade->addItem("Choose...");
+    for (int i = 0; i < grade_scale.size(); i++) {
+        ui->grade->addItem(toQString(grade_scale[i]));
+    }
+    ui->target_grade->clear();
+    ui->target_grade->addItem("Choose...");
+    for (int i = 0; i < grade_scale.size() - 1; i++) {
+        ui->target_grade->addItem(toQString(grade_scale[i]));
+    }
+
+    ui->glassContainer->setCurrentIndex(0);
+    ui->updateBtn->hide();
+    ui->messageLabel->hide();
+
+    ui->has_practical->setChecked(false);
+    ui->practical_label->hide();
+    ui->practical_line->hide();
+
+    ui->tableWidget->setAlternatingRowColors(true);
+
+    ui->progressBar->setRange(0, 100);
+    ui->progressBar->setTextVisible(true);
+
+    ui->delete_btn->style()->unpolish(ui->delete_btn);
+    ui->delete_btn->style()->polish(ui->delete_btn);
+
+    ui->title_lbl->style()->unpolish(ui->title_lbl);
+    ui->title_lbl->style()->polish(ui->title_lbl);
+}
+
+
+
+// dash board functions
 
 void MainWindow::update_dashBoard() {
     // update capsules
@@ -233,55 +231,48 @@ void MainWindow::update_dashBoard() {
         }
 
         ui->tableWidget->setItem(i, 5, statusItem);
-
-
     }
+
+
     // update chart
-    // 1. التأسيس
     QChart *chart = new QChart();
     chart->setTheme(QChart::ChartThemeDark);
     chart->legend()->hide();
-    chart->setBackgroundBrush(QBrush(QColor("#2A2A2A"))); // اللون اللي عجبك
+    chart->setBackgroundBrush(QBrush(QColor("#2A2A2A")));
 
-    // 2. عواميد الـ SGPA (الفصلي)
     QBarSet *sgpaSet = new QBarSet("SGPA");
-    sgpaSet->setColor(QColor("#00FF66")); // العواميد بلونك النيون الأخضر
+    sgpaSet->setColor(QColor("#00FF66"));
     QBarSeries *barSeries = new QBarSeries();
     barSeries->append(sgpaSet);
 
-    // 3. خط الـ CGPA (التراكمي) + إظهار النقط بوضوح
     QLineSeries *cgpaSeries = new QLineSeries();
-    QPen linePen(QColor("#00BFFF")); // الخط بلون سماوي
+    QPen linePen(QColor("#00BFFF"));
     linePen.setWidth(3);
     cgpaSeries->setPen(linePen);
-    cgpaSeries->setPointsVisible(true); // النقط المنورة
+    cgpaSeries->setPointsVisible(true);
     cgpaSeries->setMarkerSize(8.0);
 
-    // 4. 🎯 التعديل السحري: تجهيز المحور عشان يشيل 8 أترام دايماً كحد أدنى
     QStringList termsCategories;
-    int max_slots = std::max(8, (int)term_gpas.size()); // لو الأترام أقل من 8 هيعمل 8 خانات، لو أكتر هيوسع معاهم
+    int max_slots = std::max(8, (int)term_gpas.size());
 
     for (int i = 1; i <= max_slots; i++) {
-        termsCategories << QString::number(i); // هيطبع تحت: 1، 2، 3، 4، 5، 6، 7، 8
+        termsCategories << QString::number(i);
     }
 
-    // دلوقتي هنملأ البيانات الفعلية بس اللي اليوزر دخلها
     for (int i = 0; i < term_gpas.size(); i++) {
-        *sgpaSet << term_gpas[i];         // هيرسم عمود للترم الشغال بس
-        cgpaSeries->append(i, cgpas[i]);  // هيرسم نقطة الخط فوق العمود بتاعه بالظبط (الاندكس 0 يعني أول خانة)
+        *sgpaSet << term_gpas[i];
+        cgpaSeries->append(i, cgpas[i]);
     }
 
     chart->addSeries(barSeries);
     chart->addSeries(cgpaSeries);
 
-    // 5. تظبيط محور X بالـ 8 خانات الثابتة
     QBarCategoryAxis *axisX = new QBarCategoryAxis();
     axisX->append(termsCategories);
     chart->addAxis(axisX, Qt::AlignBottom);
     barSeries->attachAxis(axisX);
     cgpaSeries->attachAxis(axisX);
 
-    // 6. تظبيط محور Y
     QValueAxis *axisY = new QValueAxis();
     axisY->setRange(0.0, 4.0);
     axisY->setLabelFormat("%.2f");
@@ -289,11 +280,9 @@ void MainWindow::update_dashBoard() {
     barSeries->attachAxis(axisY);
     cgpaSeries->attachAxis(axisY);
 
-    // 7. العرض
     ui->chartWidget->setChart(chart);
     ui->chartWidget->setRenderHint(QPainter::Antialiasing);
 }
-
 
 void MainWindow::clear_dashBoard_inputs() {
     ui->code->clear();
@@ -308,9 +297,8 @@ int selectedIndex;
 bool edit = false;
 
 
-// add / edit to archieve side bar
-
-void MainWindow::on_add_button_clicked() {
+void MainWindow::on_add_button_clicked()
+{
     if (ui->code->text().isEmpty() || ui->name->text().isEmpty() || ui->hours->text().isEmpty() || ui->semester->text().isEmpty() || ui->grade->currentIndex() == 0) {
         QMessageBox::warning(this, "بيانات ناقصة", "في بيانات مهمة ناقصة! كمل باقي الخانات الفاضية الأول عشان نعرف نسجل المادة صح 📝");
         return;
@@ -324,22 +312,17 @@ void MainWindow::on_add_button_clicked() {
     c.is_latest_version = true;
     c.count_in_gpa = ui->count_in_gpa->isChecked();
 
+
     if (edit) {
-        c.is_latest_version = courses[selectedIndex].is_latest_version;
-        c.points = get_points(c.grade);
-        courses[selectedIndex] = c;
+        edit_course(c,selectedIndex);
         QMessageBox::information(this, "تم", "تم تعديل بيانات المادة بنجاح ✨");
-        update_dashboard();
         edit = false;
     }
     else {
-        for (int i = 0; i < courses.size(); i++) {
-            if (c.code == courses[i].code && c.semester == courses[i].semester) {
-                QMessageBox::warning(this, "مادة متكررة", "المادة دي متسجلة في الترم ده قبل كده! لو عايز تغير فيها حاجة، اختارها واعملها تعديل 🔄");
-                return;
-            }
+        bool is_added = add_course(c);
+        if (!is_added){
+            QMessageBox::warning(this, "مادة متكررة", "المادة دي متسجلة في الترم ده قبل كده! لو عايز تغير فيها حاجة، اختارها واعملها تعديل 🔄");
         }
-        add_course(c);
     }
     update_dashBoard();
     clear_dashBoard_inputs();
@@ -379,20 +362,6 @@ void MainWindow::on_delete_btn_clicked()
     update_dashBoard();
     clear_dashBoard_inputs();
     save_all_to_file();
-}
-
-
-void MainWindow::on_dashboard_clicked()
-{
-    ui->glassContainer->setCurrentIndex(0);
-}
-void MainWindow::on_current_semester_clicked()
-{
-    ui->glassContainer->setCurrentIndex(1);
-}
-void MainWindow::on_about_clicked()
-{
-    ui->glassContainer->setCurrentIndex(2);
 }
 
 
@@ -447,11 +416,12 @@ void MainWindow::update_semester_progress(){
 
     // update target and plane status
 
-    double current_CGPA = ui->cgpa->text().toDouble();
-    double target_CGPA = ui->target_textBox->text().toDouble();
-    int current_hours = ui->achieved_hours->text().toInt();
+    double current_CGPA = calculate_gpa();
+    int current_hours = total_hours();
+    double target_CGPA = target_cgpa;
 
     double plan_gpa = calculate_plan_gpa();
+
 
     if (target_cgpa != 0) ui->target_textBox->setText(QString::number(target_cgpa, 'f', 3));
     else {
@@ -521,7 +491,7 @@ void MainWindow::on_add_button_2_clicked()
     c.course_name = toStdString(ui->name_2->text());
     c.credit_hours = stoi(toStdString(ui->hours_2->text()));
     c.target_grade = toStdString(ui->target_grade->currentText());
-    c.has_practical = ui->count_in_gpa->isChecked();
+    c.has_practical = ui->has_practical->isChecked();
 
 
     if (!ui->mid_term->text().isEmpty()) c.midterm = stod(toStdString(ui->mid_term->text()));
@@ -533,83 +503,26 @@ void MainWindow::on_add_button_2_clicked()
     if (!ui->practical_line->text().isEmpty()) c.practical = stod(toStdString(ui->practical_line->text()));
     else c.practical = 0.0;
 
-    c.total_year_work = c.midterm + c.quiz + c.year_work + c.practical;
 
-    for (int i = 0; i < grade_scale.size(); i++) {
-        if (grade_scale[i] == c.target_grade) {
-            c.required_final_grade = grade_marks[i] - c.total_year_work;
-            c.points = grade_points[i];
-            break;
-        }
-    }
+    CourseStatus status = process_semester_course(c, semester_edit, semester_selectedIndex);
 
-    for (int i = courses.size() - 1; i >= 0; i--) {
-        if (c.course_code == courses[i].code && (c.target_grade == "B+" || c.target_grade == "A-" || c.target_grade == "A" || c.target_grade == "A+")) {
-            QMessageBox::warning(this, "مادة تحسين/إعادة", "خلي بالك، المادة دي متسجلة قبل كده فـ أقصى تقدير مسموح بيه هو B.. ظبط التارجت على الأساس ده 🎯");
-            return;
-        }
+    if (status == CourseStatus::RETAKE_ERROR) {
+        QMessageBox::warning(this, "مادة تحسين/إعادة", "خلي بالك، المادة دي متسجلة قبل كده فـ أقصى تقدير مسموح بيه هو B 🎯");
+        return;
     }
-    if (!semester_edit) {
-        for (int i = 0; i < current_semester_courses.size(); i++) {
-            if (c.course_code == current_semester_courses[i].course_code) {
-                QMessageBox::warning(this, "مادة متكررة", "المادة دي متسجلة في الترم ده قبل كده! لو عايز تغير فيها حاجة، اختارها واعملها تعديل 🔄");
-                return;
-            }
-        }
+    else if (status == CourseStatus::DUPLICATE_ERROR) {
+        QMessageBox::warning(this, "مادة متكررة", "المادة دي متسجلة في الترم ده قبل كده! 🔄");
+        return;
     }
-
 
     if (semester_edit) {
-        current_semester_courses[semester_selectedIndex] = c;
         QMessageBox::information(this, "تم", "تم تعديل بيانات المادة بنجاح ✨");
         semester_edit = false;
-    }
-    else {
-        add_sem_course(c);
-        save_all_to_file();
     }
 
     update_semester_progress();
     clear_sem_progress_input();
 }
-
-void MainWindow::on_target_textBox_editingFinished()
-{
-    if (ui->target_textBox->text().isEmpty()) {
-        ui->plan_statue->setText("دخل التارجت بتاعك الأول عشان نبدأ نحسب الخطة 🎯");
-        return;
-    }
-    if (stod(toStdString(ui->target_textBox->text())) < stod(toStdString(ui->cgpa->text()))) {
-        QMessageBox::warning(this, "تارجت مش منطقي", "التارجت اللي كتبته أقل من الـ GPA بتاعك دلوقتي! إحنا بنعمل خطة عشان نعلى مش ننزل، ظبط الرقم 🚀");
-        ui->target_textBox->text().clear();
-        ui->target_sgpa->text().clear();
-        ui->plan_statue->text().clear();
-        return;
-    }
-    target_cgpa = stod(toStdString(ui->target_textBox->text()));
-    update_semester_progress();
-}
-
-void MainWindow::on_linkedin_clicked()
-{
-    QString linkedin = "www.linkedin.com/in/mustafa-elqady";
-    QDesktopServices::openUrl(QUrl(linkedin));
-}
-
-
-void MainWindow::on_github_clicked()
-{
-    QString github = "https://github.com/mostafa-hussain-1";
-    QDesktopServices::openUrl(QUrl(github));
-}
-
-void MainWindow::on_complaints_clicked()
-{
-    QString form = "https://docs.google.com/forms/d/e/1FAIpQLSen9Q5RbkHqKpQbfR1toD6z2DVqfTSOT6-c_vw8PSLZO-IIQQ/viewform";
-    QDesktopServices::openUrl(QUrl(form));
-}
-
-
 void MainWindow::on_edit_course_2_clicked()
 {
     QModelIndexList selectedRows = ui->registered_courses->selectionModel()->selectedRows();
@@ -636,8 +549,6 @@ void MainWindow::on_edit_course_2_clicked()
 
     semester_edit = true;
 }
-
-
 void MainWindow::on_delete_btn_2_clicked()
 {
     QModelIndexList selectedRows = ui->registered_courses->selectionModel()->selectedRows();
@@ -652,17 +563,16 @@ void MainWindow::on_delete_btn_2_clicked()
     clear_sem_progress_input();
     save_all_to_file();
 }
-
-
+void MainWindow::on_has_practical_toggled(bool checked)
+{
+    ui->practical_label->setVisible(checked);
+    ui->practical_line->setVisible(checked);
+}
 void MainWindow::on_submit_clicked()
 {
     if (current_semester_courses.empty()) {
         QMessageBox::warning(this, "الترم فاضي", "مفيش أي مواد متسجلة في الترم ده عشان تترحل.. ضيف موادك الأول 🤷‍♂️");
         return;
-    }
-    if (target_cgpa == 0){
-
-        //return;
     }
     final_grades grades_form(this);
     grades_form.exec();
@@ -671,11 +581,55 @@ void MainWindow::on_submit_clicked()
     update_dashBoard();
     update_semester_progress();
 }
-
-
-void MainWindow::on_has_practical_toggled(bool checked)
+void MainWindow::on_target_textBox_editingFinished()
 {
-    ui->practical_label->setVisible(checked);
-    ui->practical_line->setVisible(checked);
+    if (ui->target_textBox->text().isEmpty()) {
+        ui->plan_statue->setText("دخل التارجت بتاعك الأول عشان نبدأ نحسب الخطة 🎯");
+        return;
+    }
+    if (stod(toStdString(ui->target_textBox->text())) < stod(toStdString(ui->cgpa->text()))) {
+        QMessageBox::warning(this, "تارجت مش منطقي", "التارجت اللي كتبته أقل من الـ GPA بتاعك دلوقتي! إحنا بنعمل خطة عشان نعلى مش ننزل، ظبط الرقم 🚀");
+        ui->target_textBox->text().clear();
+        ui->target_sgpa->text().clear();
+        ui->plan_statue->text().clear();
+        return;
+    }
+    target_cgpa = stod(toStdString(ui->target_textBox->text()));
+    update_semester_progress();
 }
 
+
+
+// navigation bar
+
+void MainWindow::on_dashboard_clicked()
+{
+    ui->glassContainer->setCurrentIndex(0);
+
+}
+void MainWindow::on_current_semester_clicked()
+{
+    ui->glassContainer->setCurrentIndex(1);
+}
+void MainWindow::on_about_clicked()
+{
+    ui->glassContainer->setCurrentIndex(2);
+}
+
+
+// about
+void MainWindow::on_linkedin_clicked()
+{
+    QString linkedin = "www.linkedin.com/in/mustafa-elqady";
+    QDesktopServices::openUrl(QUrl(linkedin));
+}
+void MainWindow::on_github_clicked()
+{
+    QString github = "https://github.com/mostafa-hussain-1";
+    QDesktopServices::openUrl(QUrl(github));
+}
+void MainWindow::on_complaints_clicked()
+{
+    QString form = "https://docs.google.com/forms/d/e/1FAIpQLSen9Q5RbkHqKpQbfR1toD6z2DVqfTSOT6-c_vw8PSLZO-IIQQ/viewform";
+    QDesktopServices::openUrl(QUrl(form));
+}

@@ -28,6 +28,9 @@ private:
 private slots:
     void update_dashBoard();
     void fixed_properties();
+    void setup_tables_ui();
+    void setup_validators();
+    void setup_general_ui();
     void clear_dashBoard_inputs();
     void on_add_button_clicked();
     void on_edit_course_clicked();

@@ -1,2 +1,2 @@
-set(__QT_DEPLOY_TARGET_SGA_Qt_FILE /run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt)
-set(__QT_DEPLOY_TARGET_SGA_Qt_TYPE EXECUTABLE)
+set(__QT_DEPLOY_TARGET_SGAPlus_FILE /run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus)
+set(__QT_DEPLOY_TARGET_SGAPlus_TYPE EXECUTABLE)

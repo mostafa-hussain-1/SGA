@@ -11,7 +11,7 @@
 # =============================================================================
 
 # =============================================================================
-# Project: SGA_Qt
+# Project: SGAPlus
 # Configurations: Debug
 # =============================================================================
 
@@ -41,114 +41,114 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/build/Desktop_Debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target SGA_Qt
+# Object build statements for EXECUTABLE target SGAPlus
 
 
 #############################################
-# Order-only phony target for SGA_Qt
+# Order-only phony target for SGAPlus
 
-build cmake_object_order_depends_target_SGA_Qt: phony || SGA_Qt_autogen SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp SGA_Qt_autogen/mocs_compilation.cpp SGA_Qt_autogen/timestamp SGA_Qt_autogen_timestamp_deps
+build cmake_object_order_depends_target_SGAPlus: phony || SGAPlus_autogen SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp SGAPlus_autogen/mocs_compilation.cpp SGAPlus_autogen/timestamp SGAPlus_autogen_timestamp_deps
 
-build CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/mocs_compilation.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/SGAPlus_autogen/mocs_compilation.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/mocs_compilation.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/mocs_compilation.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/SGAPlus_autogen/mocs_compilation.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir/SGAPlus_autogen
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/main.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/main.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/main.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/main.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/main.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/main.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/mainwindow.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/mainwindow.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/mainwindow.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/mainwindow.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/dataBase.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/dataBase.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/dataBase.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/dataBase.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/dataBase.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/dataBase.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/home_page.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/home_page.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/dash_board.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/dash_board.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/home_page.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/dash_board.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/semester_progress.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/semester_progress.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/semester_progress.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/semester_progress.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/semester_progress.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/semester_progress.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/final_grades.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/final_grades.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/final_grades.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/final_grades.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/final_grades.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/final_grades.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
-build CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o: CXX_COMPILER__SGA_Qt_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp || cmake_object_order_depends_target_SGA_Qt
+build CMakeFiles/SGAPlus.dir/SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp.o: CXX_COMPILER__SGAPlus_unscanned_Debug /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp || cmake_object_order_depends_target_SGAPlus
   CONFIG = Debug
   DEFINES = -DQT_CHARTS_LIB -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_OPENGLWIDGETS_LIB -DQT_OPENGL_LIB -DQT_WIDGETS_LIB
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp.o.d
   FLAGS = -g -std=gnu++17 -fdiagnostics-color=always
-  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
-  OBJECT_FILE_DIR = CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  INCLUDES = -I"/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/include" -isystem /usr/include/qt6/QtCore -isystem /usr/include/qt6 -isystem /usr/lib64/qt6/mkspecs/linux-g++ -isystem /usr/include/qt6/QtWidgets -isystem /usr/include/qt6/QtGui -isystem /usr/include/qt6/QtCharts -isystem /usr/include/qt6/QtOpenGL -isystem /usr/include/qt6/QtOpenGLWidgets -isystem /usr/include/qt6/QtNetwork
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
+  OBJECT_FILE_DIR = CMakeFiles/SGAPlus.dir/SGAPlus_autogen/EWIEGA46WW
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target SGA_Qt
+# Link build statements for EXECUTABLE target SGAPlus
 
 
 #############################################
-# Link the executable SGA_Qt
+# Link the executable SGAPlus
 
-build SGA_Qt: CXX_EXECUTABLE_LINKER__SGA_Qt_Debug CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/mocs_compilation.cpp.o CMakeFiles/SGA_Qt.dir/main.cpp.o CMakeFiles/SGA_Qt.dir/mainwindow.cpp.o CMakeFiles/SGA_Qt.dir/dataBase.cpp.o CMakeFiles/SGA_Qt.dir/home_page.cpp.o CMakeFiles/SGA_Qt.dir/semester_progress.cpp.o CMakeFiles/SGA_Qt.dir/final_grades.cpp.o CMakeFiles/SGA_Qt.dir/SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp.o | /usr/lib64/libQt6Charts.so.6.11.1 /usr/lib64/libQt6Network.so.6.11.1 /usr/lib64/libQt6OpenGLWidgets.so.6.11.1 /usr/lib64/libQt6Widgets.so.6.11.1 /usr/lib64/libQt6OpenGL.so.6.11.1 /usr/lib64/libQt6Gui.so.6.11.1 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /usr/lib64/libQt6Core.so.6.11.1 || SGA_Qt_autogen SGA_Qt_autogen_timestamp_deps
+build SGAPlus: CXX_EXECUTABLE_LINKER__SGAPlus_Debug CMakeFiles/SGAPlus.dir/SGAPlus_autogen/mocs_compilation.cpp.o CMakeFiles/SGAPlus.dir/main.cpp.o CMakeFiles/SGAPlus.dir/mainwindow.cpp.o CMakeFiles/SGAPlus.dir/dataBase.cpp.o CMakeFiles/SGAPlus.dir/dash_board.cpp.o CMakeFiles/SGAPlus.dir/semester_progress.cpp.o CMakeFiles/SGAPlus.dir/final_grades.cpp.o CMakeFiles/SGAPlus.dir/SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp.o | /usr/lib64/libQt6Charts.so.6.11.1 /usr/lib64/libQt6Network.so.6.11.1 /usr/lib64/libQt6OpenGLWidgets.so.6.11.1 /usr/lib64/libQt6Widgets.so.6.11.1 /usr/lib64/libQt6OpenGL.so.6.11.1 /usr/lib64/libQt6Gui.so.6.11.1 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /usr/lib64/libQt6Core.so.6.11.1 || SGAPlus_autogen SGAPlus_autogen_timestamp_deps
   CONFIG = Debug
-  DEP_FILE = CMakeFiles/SGA_Qt.dir/link.d
+  DEP_FILE = CMakeFiles/SGAPlus.dir/link.d
   FLAGS = -g
-  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/SGA_Qt.dir/link.d
+  LINK_FLAGS = -Wl,--dependency-file=CMakeFiles/SGAPlus.dir/link.d
   LINK_LIBRARIES = /usr/lib64/libQt6Charts.so.6.11.1  /usr/lib64/libQt6Network.so.6.11.1  /usr/lib64/libQt6OpenGLWidgets.so.6.11.1  /usr/lib64/libQt6Widgets.so.6.11.1  /usr/lib64/libQt6OpenGL.so.6.11.1  /usr/lib64/libQt6Gui.so.6.11.1  /usr/lib64/libGLX.so  /usr/lib64/libOpenGL.so  /usr/lib64/libQt6Core.so.6.11.1
-  OBJECT_DIR = CMakeFiles/SGA_Qt.dir
+  OBJECT_DIR = CMakeFiles/SGAPlus.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = SGA_Qt
-  TARGET_PDB = SGA_Qt.dbg
-  TARGET_SUPPORT_DIR = CMakeFiles/SGA_Qt.dir
+  TARGET_FILE = SGAPlus
+  TARGET_PDB = SGAPlus.dbg
+  TARGET_SUPPORT_DIR = CMakeFiles/SGAPlus.dir
 
 
 #############################################
@@ -218,41 +218,41 @@ build install/strip: phony CMakeFiles/install/strip.util
 
 
 #############################################
-# Utility command for SGA_Qt_autogen_timestamp_deps
+# Utility command for SGAPlus_autogen_timestamp_deps
 
-build SGA_Qt_autogen_timestamp_deps: phony
-
-
-#############################################
-# Utility command for SGA_Qt_autogen
-
-build SGA_Qt_autogen: phony CMakeFiles/SGA_Qt_autogen SGA_Qt_autogen/include/ui_mainwindow.h SGA_Qt_autogen/include/ui_final_grades.h SGA_Qt_autogen/timestamp SGA_Qt_autogen/mocs_compilation.cpp SGA_Qt_autogen_timestamp_deps
+build SGAPlus_autogen_timestamp_deps: phony
 
 
 #############################################
-# Custom command for SGA_Qt_autogen/timestamp
+# Utility command for SGAPlus_autogen
 
-build SGA_Qt_autogen/timestamp SGA_Qt_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}SGA_Qt_autogen/timestamp ${cmake_ninja_workdir}SGA_Qt_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib64/qt6/libexec/moc /usr/lib64/qt6/libexec/uic || SGA_Qt_autogen_timestamp_deps
-  COMMAND = cd "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" && /usr/bin/cmake -E cmake_autogen "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/SGA_Qt_autogen.dir/AutogenInfo.json" Debug && /usr/bin/cmake -E touch "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/timestamp" && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGA_Qt_autogen/deps" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/d/7f6cebb191e1a918d1e1b05783e2ae1f2cbb8fe2f2760db6f178f518c57725a8.d"
-  DESC = Automatic MOC and UIC for target SGA_Qt
-  depfile = CMakeFiles/d/7f6cebb191e1a918d1e1b05783e2ae1f2cbb8fe2f2760db6f178f518c57725a8.d
+build SGAPlus_autogen: phony CMakeFiles/SGAPlus_autogen SGAPlus_autogen/include/ui_mainwindow.h SGAPlus_autogen/include/ui_final_grades.h SGAPlus_autogen/timestamp SGAPlus_autogen/mocs_compilation.cpp SGAPlus_autogen_timestamp_deps
+
+
+#############################################
+# Custom command for SGAPlus_autogen/timestamp
+
+build SGAPlus_autogen/timestamp SGAPlus_autogen/mocs_compilation.cpp | ${cmake_ninja_workdir}SGAPlus_autogen/timestamp ${cmake_ninja_workdir}SGAPlus_autogen/mocs_compilation.cpp: CUSTOM_COMMAND /usr/lib64/qt6/libexec/moc /usr/lib64/qt6/libexec/uic || SGAPlus_autogen_timestamp_deps
+  COMMAND = cd "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" && /usr/bin/cmake -E cmake_autogen "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/SGAPlus_autogen.dir/AutogenInfo.json" Debug && /usr/bin/cmake -E touch "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/timestamp" && /usr/bin/cmake -E cmake_transform_depfile Ninja gccdepfile "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/SGAPlus_autogen/deps" "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/d/a936e14690b356504e09907729cfca146ae66529b5775ad9bdad5a6e4446ee66.d"
+  DESC = Automatic MOC and UIC for target SGAPlus
+  depfile = CMakeFiles/d/a936e14690b356504e09907729cfca146ae66529b5775ad9bdad5a6e4446ee66.d
   deps = gcc
   restat = 1
 
 
 #############################################
-# Custom command for SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp
+# Custom command for SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp
 
-build SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}SGA_Qt_autogen/EWIEGA46WW/qrc_res.cpp: CUSTOM_COMMAND /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/res.qrc CMakeFiles/SGA_Qt_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/2459101-426374013.jpg /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/calculator-8-64.png /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/Screenshot_20260620_153737.png /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/Screenshot_20260620_195159.png /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/Screenshot_20260619_132542.png /usr/lib64/qt6/libexec/rcc /usr/lib64/qt6/libexec/rcc || SGA_Qt_autogen SGA_Qt_autogen_timestamp_deps
-  COMMAND = cd "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" && /usr/bin/cmake -E cmake_autorcc /run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/SGA_Qt_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json Debug
+build SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp | ${cmake_ninja_workdir}SGAPlus_autogen/EWIEGA46WW/qrc_res.cpp: CUSTOM_COMMAND /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/res.qrc CMakeFiles/SGAPlus_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/2459101-426374013.jpg /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/calculator-8-64.png /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/Screenshot_20260620_153737.png /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/Screenshot_20260620_195159.png /run/media/mostafa/Data/College/Projects/cpp/GPA$ Calculator/SGA_Qt/Screenshot_20260619_132542.png /usr/lib64/qt6/libexec/rcc /usr/lib64/qt6/libexec/rcc || SGAPlus_autogen SGAPlus_autogen_timestamp_deps
+  COMMAND = cd "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug" && /usr/bin/cmake -E cmake_autorcc /run/media/mostafa/Data/College/Projects/cpp/GPA\ Calculator/SGA_Qt/build/Desktop_Debug/CMakeFiles/SGAPlus_autogen.dir/AutoRcc_res_EWIEGA46WW_Info.json Debug
   DESC = Automatic RCC for res.qrc
   restat = 1
 
 
 #############################################
-# Phony custom command for CMakeFiles/SGA_Qt_autogen
+# Phony custom command for CMakeFiles/SGAPlus_autogen
 
-build CMakeFiles/SGA_Qt_autogen SGA_Qt_autogen/include/ui_mainwindow.h SGA_Qt_autogen/include/ui_final_grades.h | ${cmake_ninja_workdir}CMakeFiles/SGA_Qt_autogen ${cmake_ninja_workdir}SGA_Qt_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}SGA_Qt_autogen/include/ui_final_grades.h: phony SGA_Qt_autogen/timestamp || SGA_Qt_autogen_timestamp_deps
+build CMakeFiles/SGAPlus_autogen SGAPlus_autogen/include/ui_mainwindow.h SGAPlus_autogen/include/ui_final_grades.h | ${cmake_ninja_workdir}CMakeFiles/SGAPlus_autogen ${cmake_ninja_workdir}SGAPlus_autogen/include/ui_mainwindow.h ${cmake_ninja_workdir}SGAPlus_autogen/include/ui_final_grades.h: phony SGAPlus_autogen/timestamp || SGAPlus_autogen_timestamp_deps
 
 # =============================================================================
 # Target aliases.
@@ -265,7 +265,7 @@ build CMakeFiles/SGA_Qt_autogen SGA_Qt_autogen/include/ui_mainwindow.h SGA_Qt_au
 #############################################
 # Folder: /run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug
 
-build all: phony SGA_Qt
+build all: phony SGAPlus
 
 # =============================================================================
 # Built-in targets

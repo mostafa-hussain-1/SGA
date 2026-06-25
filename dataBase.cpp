@@ -4,7 +4,7 @@
 #include <QStandardPaths>
 #include <QDir>
 #include <QString>
-#include "sga.h"
+#include "dash_board.h"
 #include "semester_progress.h"
 #include "dataBase.h"
 

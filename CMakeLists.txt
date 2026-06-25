@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(SGA_Qt VERSION 0.1 LANGUAGES CXX)
+project(SGAPlus VERSION 0.1 LANGUAGES CXX)
 set(QT_VERSION_MAJOR 6)
 
 set(CMAKE_AUTOUIC ON)
@@ -20,16 +20,16 @@ set(PROJECT_SOURCES
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(SGA_Qt
+    qt_add_executable(SGAPlus
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         dataBase.cpp
         dataBase.h
-        home_page.cpp
+        dash_board.cpp
         SGA_array.h
         semester_progress.cpp
         semester_progress.h
-        sga.h
+        dash_board.h
         res.qrc
         final_grades.h
         final_grades.cpp
@@ -54,7 +54,7 @@ else()
     endif()
 endif()
 
-target_link_libraries(SGA_Qt PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Charts Qt${QT_VERSION_MAJOR}::Network)
+target_link_libraries(SGAPlus PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSION_MAJOR}::Charts Qt${QT_VERSION_MAJOR}::Network)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
@@ -62,7 +62,7 @@ target_link_libraries(SGA_Qt PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt${QT_VERSI
 if(${QT_VERSION_MAJOR} VERSION_LESS 6.1.0)
   set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.SGA_Qt)
 endif()
-set_target_properties(SGA_Qt PROPERTIES
+set_target_properties(SGAPlus PROPERTIES
     ${BUNDLE_ID_OPTION}
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
@@ -71,12 +71,12 @@ set_target_properties(SGA_Qt PROPERTIES
 )
 
 include(GNUInstallDirs)
-install(TARGETS SGA_Qt
+install(TARGETS SGAPlus
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(SGA_Qt)
+    qt_finalize_executable(SGAPlus)
 endif()

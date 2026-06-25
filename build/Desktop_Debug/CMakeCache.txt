@@ -191,7 +191,7 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 CMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug/.qtcreator/cmake-helper/qtcreator-project.cmake
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SGA_Qt
+CMAKE_PROJECT_NAME:STATIC=SGAPlus
 
 //Value Computed by CMake
 CMAKE_PROJECT_SPDX_LICENSE:STATIC=
@@ -378,6 +378,15 @@ Qt6_DIR:PATH=/usr/lib64/cmake/Qt6
 
 //The directory containing a CMake configuration file for Qt.
 Qt_DIR:PATH=Qt_DIR-NOTFOUND
+
+//Value Computed by CMake
+SGAPlus_BINARY_DIR:STATIC=/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug
+
+//Value Computed by CMake
+SGAPlus_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+SGAPlus_SOURCE_DIR:STATIC=/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt
 
 //Value Computed by CMake
 SGA_Qt_BINARY_DIR:STATIC=/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug

@@ -12,5 +12,6 @@ int main(int argc, char *argv[])
     QApplication::setStyle(QStyleFactory::create("Fusion"));
     MainWindow w;
     w.show();
+    save_all_to_file();
     return QApplication::exec();
 }
