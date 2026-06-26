@@ -45,8 +45,8 @@ void MainWindow::onNetworkReply(QNetworkReply *reply)
 
     QStringList lines = response.split("\n", Qt::SkipEmptyParts);
 
-    double current_version = 1.1;
-    ui->version->setText("SGA+ v1.1");
+    double current_version = 1.2;
+    ui->version->setText("SGA+ v1.2");
     QString message = "";
 
     for (const QString &line : lines) {
@@ -126,24 +126,30 @@ void MainWindow::setup_tables_ui(){
 
 void MainWindow::setup_validators(){
     ui->hours->setValidator(new QIntValidator(1, 1, this));
-    ui->semester->setValidator(new QIntValidator(1, 20, this));
+    QRegularExpression rx_semNumber("^([1-9]|1[0-9]|20)?$");
+    QValidator *semNumValidator = new QRegularExpressionValidator(rx_semNumber, this);
+    ui->semester->setValidator(semNumValidator);
 
     ui->hours_2->setValidator(new QIntValidator(1, 1, this));
-    ui->practical_line->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-    ui->quiz->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-    ui->mid_term->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
-    ui->year_work->setValidator(new QDoubleValidator(0.00, 50.00, 2, this));
 
-    ui->target_textBox->setValidator(new QDoubleValidator(0.00, 4.00, 3, this));
+    QRegularExpression rx_grades("^([0-4]?[0-9](\\.[0-9]{0,2})?|50(\\.0{0,2})?)?$");
+    QValidator *gradesValidator = new QRegularExpressionValidator(rx_grades, this);
+    ui->practical_line->setValidator(gradesValidator);
+    ui->quiz->setValidator(gradesValidator);
+    ui->mid_term->setValidator(gradesValidator);
+    ui->year_work->setValidator(gradesValidator);
+
+    QRegularExpression rx("^([0-3](\\.[0-9]{0,3})?|4(\\.0{0,3})?)?$");
+    QValidator *validator = new QRegularExpressionValidator(rx, this);
+    ui->target_textBox->setValidator(validator);
 
 
-    QRegularExpression rx("^[^,]*$");
-    QRegularExpressionValidator *commaValidator = new QRegularExpressionValidator(rx, this);
+    QRegularExpression rx_text("^[^,]*$");
+    QRegularExpressionValidator *commaValidator = new QRegularExpressionValidator(rx_text, this);
     ui->code->setValidator(commaValidator);
     ui->name->setValidator(commaValidator);
     ui->code_2->setValidator(commaValidator);
     ui->name_2->setValidator(commaValidator);
-
 }
 
 void MainWindow::setup_general_ui(){

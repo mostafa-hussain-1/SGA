@@ -19,9 +19,9 @@
 		"major" : 2,
 		"minor" : 10
 	},
-	"id" : "SGA_Qt_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+	"id" : "SGAPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
 	"isGeneratorProvided" : true,
-	"name" : "SGA_Qt_autogen_timestamp_deps",
+	"name" : "SGAPlus_autogen_timestamp_deps",
 	"orderDependencies" : 
 	[
 		{

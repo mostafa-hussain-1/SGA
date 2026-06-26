@@ -16,6 +16,7 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QFrame>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -35,10 +36,12 @@ class Ui_MainWindow
 public:
     QWidget *centralwidget;
     QFrame *frame;
-    QLabel *head_lbl;
     QPushButton *dashboard;
     QPushButton *about;
     QPushButton *current_semester;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *head_lbl;
     QLabel *label_28;
     QFrame *frame_1;
     QLabel *label_4;
@@ -81,7 +84,6 @@ public:
     QChartView *chartWidget;
     QLabel *messageLabel;
     QPushButton *updateBtn;
-    QLabel *version;
     QWidget *page_3;
     QFrame *frame_7;
     QLabel *title_lbl_2;
@@ -129,6 +131,7 @@ public:
     QLabel *label_27;
     QLabel *about_message;
     QPushButton *github;
+    QLabel *version;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -427,12 +430,6 @@ public:
         frame->setMaximumSize(QSize(388, 114));
         frame->setFrameShape(QFrame::Shape::StyledPanel);
         frame->setFrameShadow(QFrame::Shadow::Raised);
-        head_lbl = new QLabel(frame);
-        head_lbl->setObjectName("head_lbl");
-        head_lbl->setGeometry(QRect(22, 4, 314, 43));
-        QFont font;
-        font.setBold(true);
-        head_lbl->setFont(font);
         dashboard = new QPushButton(frame);
         dashboard->setObjectName("dashboard");
         dashboard->setGeometry(QRect(22, 45, 60, 56));
@@ -442,10 +439,33 @@ public:
         current_semester = new QPushButton(frame);
         current_semester->setObjectName("current_semester");
         current_semester->setGeometry(QRect(150, 45, 64, 56));
-        label_28 = new QLabel(frame);
+        widget = new QWidget(frame);
+        widget->setObjectName("widget");
+        widget->setGeometry(QRect(23, -10, 342, 71));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setObjectName("horizontalLayout");
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        head_lbl = new QLabel(widget);
+        head_lbl->setObjectName("head_lbl");
+        QSizePolicy sizePolicy(QSizePolicy::Policy::Preferred, QSizePolicy::Policy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(head_lbl->sizePolicy().hasHeightForWidth());
+        head_lbl->setSizePolicy(sizePolicy);
+        QFont font;
+        font.setBold(true);
+        head_lbl->setFont(font);
+
+        horizontalLayout->addWidget(head_lbl);
+
+        label_28 = new QLabel(widget);
         label_28->setObjectName("label_28");
-        label_28->setGeometry(QRect(340, 9, 37, 36));
+        sizePolicy.setHeightForWidth(label_28->sizePolicy().hasHeightForWidth());
+        label_28->setSizePolicy(sizePolicy);
         label_28->setFont(font);
+
+        horizontalLayout->addWidget(label_28);
+
         frame_1 = new QFrame(centralwidget);
         frame_1->setObjectName("frame_1");
         frame_1->setEnabled(false);
@@ -527,7 +547,7 @@ public:
         label_8->setGeometry(QRect(9, 7, 37, 45));
         glassContainer = new QStackedWidget(centralwidget);
         glassContainer->setObjectName("glassContainer");
-        glassContainer->setGeometry(QRect(10, 130, 1273, 660));
+        glassContainer->setGeometry(QRect(10, 130, 1273, 639));
         page = new QWidget();
         page->setObjectName("page");
         frame_5 = new QFrame(page);
@@ -639,11 +659,6 @@ public:
         updateBtn->setObjectName("updateBtn");
         updateBtn->setEnabled(true);
         updateBtn->setGeometry(QRect(64, 4, 254, 35));
-        version = new QLabel(page);
-        version->setObjectName("version");
-        version->setGeometry(QRect(570, 634, 149, 24));
-        version->setFont(font);
-        version->setAlignment(Qt::AlignmentFlag::AlignCenter);
         glassContainer->addWidget(page);
         page_3 = new QWidget();
         page_3->setObjectName("page_3");
@@ -863,6 +878,11 @@ public:
         github->setIcon(icon2);
         github->setIconSize(QSize(245, 280));
         glassContainer->addWidget(page_2);
+        version = new QLabel(centralwidget);
+        version->setObjectName("version");
+        version->setGeometry(QRect(562, 769, 149, 24));
+        version->setFont(font);
+        version->setAlignment(Qt::AlignmentFlag::AlignCenter);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -914,8 +934,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "SGA+", nullptr));
-        head_lbl->setText(QCoreApplication::translate("MainWindow", "Smart GPA Assistant", nullptr));
-        head_lbl->setProperty("label_case", QVariant(QCoreApplication::translate("MainWindow", "head", nullptr)));
 #if QT_CONFIG(tooltip)
         dashboard->setToolTip(QCoreApplication::translate("MainWindow", "Dashboard", nullptr));
 #endif // QT_CONFIG(tooltip)
@@ -931,6 +949,8 @@ public:
 #endif // QT_CONFIG(tooltip)
         current_semester->setText(QCoreApplication::translate("MainWindow", "\360\237\216\257", nullptr));
         current_semester->setProperty("style_type", QVariant(QCoreApplication::translate("MainWindow", "emoji_btn", nullptr)));
+        head_lbl->setText(QCoreApplication::translate("MainWindow", "Smart GPA Assistant", nullptr));
+        head_lbl->setProperty("label_case", QVariant(QCoreApplication::translate("MainWindow", "head", nullptr)));
         label_28->setText(QCoreApplication::translate("MainWindow", "+", nullptr));
         label_28->setProperty("label_case", QVariant(QCoreApplication::translate("MainWindow", "plus", nullptr)));
         frame_1->setProperty("style_type", QVariant(QCoreApplication::translate("MainWindow", "neon", nullptr)));
@@ -984,7 +1004,6 @@ public:
         label_5->setText(QCoreApplication::translate("MainWindow", "Completed Courses", nullptr));
         messageLabel->setText(QString());
         updateBtn->setText(QCoreApplication::translate("MainWindow", "Update Now ! ", nullptr));
-        version->setText(QString());
         title_lbl_2->setText(QCoreApplication::translate("MainWindow", "Register Course", nullptr));
         title_lbl_2->setProperty("label_case", QVariant(QCoreApplication::translate("MainWindow", "title", nullptr)));
         label_18->setText(QCoreApplication::translate("MainWindow", "Course Code", nullptr));
@@ -1059,6 +1078,7 @@ public:
 #endif // QT_CONFIG(tooltip)
         github->setText(QString());
         github->setProperty("case", QVariant(QCoreApplication::translate("MainWindow", "social_media", nullptr)));
+        version->setText(QString());
     } // retranslateUi
 
 };

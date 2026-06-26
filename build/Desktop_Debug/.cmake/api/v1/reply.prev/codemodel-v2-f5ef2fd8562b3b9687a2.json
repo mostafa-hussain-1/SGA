@@ -909,7 +909,7 @@
 					],
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-fb3c9a815df57bf87c3b.json",
+					"jsonFile" : "directory-.-Debug-953309349a1e6c09d46c.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -1047,7 +1047,7 @@
 					[
 						0
 					],
-					"name" : "SGA_Qt",
+					"name" : "SGAPlus",
 					"targetIndexes" : 
 					[
 						0,
@@ -1060,23 +1060,23 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "SGA_Qt::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SGA_Qt-Debug-5181a901289f60c32a87.json",
-					"name" : "SGA_Qt",
+					"id" : "SGAPlus::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SGAPlus-Debug-32235ac5f5381b1b8439.json",
+					"name" : "SGAPlus",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "SGA_Qt_autogen::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SGA_Qt_autogen-Debug-cd8c4c8f64f3206da7e0.json",
-					"name" : "SGA_Qt_autogen",
+					"id" : "SGAPlus_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SGAPlus_autogen-Debug-024168de7af5300d039d.json",
+					"name" : "SGAPlus_autogen",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "SGA_Qt_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-SGA_Qt_autogen_timestamp_deps-Debug-46a007e98c1faf4c6db0.json",
-					"name" : "SGA_Qt_autogen_timestamp_deps",
+					"id" : "SGAPlus_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SGAPlus_autogen_timestamp_deps-Debug-51304d6cad8290f01e00.json",
+					"name" : "SGAPlus_autogen_timestamp_deps",
 					"projectIndex" : 0
 				}
 			]

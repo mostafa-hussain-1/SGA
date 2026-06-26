@@ -1083,7 +1083,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "SGA_Qt"
+			"value" : "SGAPlus"
 		},
 		{
 			"name" : "CMAKE_PROJECT_SPDX_LICENSE",
@@ -7444,6 +7444,42 @@
 			],
 			"type" : "PATH",
 			"value" : "Qt_DIR-NOTFOUND"
+		},
+		{
+			"name" : "SGAPlus_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt/build/Desktop_Debug"
+		},
+		{
+			"name" : "SGAPlus_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "SGAPlus_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/run/media/mostafa/Data/College/Projects/cpp/GPA Calculator/SGA_Qt"
 		},
 		{
 			"name" : "SGA_Qt_BINARY_DIR",
